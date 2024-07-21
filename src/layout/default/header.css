@@ -1,0 +1,21 @@
+.nav-link::before,
+.nav-link::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100px;
+  background-color:#242140;
+}
+
+.nav-link::before {
+  left: -35px;
+  transform: skew(35deg);
+  border-radius:  0 0 0 30%;
+}
+
+.nav-link::after {
+  right: -35px;
+  transform: skew(-35deg);
+  border-radius: 0 0 30% 0;
+}
