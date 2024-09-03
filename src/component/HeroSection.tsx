@@ -1,4 +1,6 @@
 import tetris from "../assets/images/tetris.png";
+import TetrisGame from './TetrisGame';
+
 const HeroSection = () => {
   return (
     <div className="flex justify-center mb-20">
@@ -15,7 +17,7 @@ const HeroSection = () => {
             Algorithmic Trading Club.
           </div>
         </div>
-        <div
+        {/* <div
           className="hidden lg:block col-auto lg:col-span-2"
           style={{ height: 600, width: "100%" }}
         >
@@ -29,6 +31,13 @@ const HeroSection = () => {
               backgroundRepeat: "no-repeat",
             }}
           ></div>
+        </div> */}
+
+        <div
+          className="hidden lg:block col-auto lg:col-span-2"
+          style={{ height: 600, width: '100%' }}
+        >
+          <TetrisGame />
         </div>
       </div>
     </div>
