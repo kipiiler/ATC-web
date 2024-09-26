@@ -1,10 +1,12 @@
-import ceoImage from "../assets/images/ceo.png";
-import c2 from "../assets/images/c2.png";
 import c3 from "../assets/images/c3.png";
 import c4 from "../assets/images/c4.png";
-import c5 from "../assets/images/c5.png";
-import c6 from "../assets/images/c6.png";
 import blogHolderImage from "../assets/images/blog_hold.jpg";
+
+import jb from "../assets/images/jb.webp";
+import av from "../assets/images/iav.webp";
+import iss from "../assets/images/iss.png";
+import as from "../assets/images/as.webp";
+import hn from "../assets/images/ho.png";
 
 const getPosts = async () => {
   return [
@@ -136,18 +138,18 @@ const getExecutiveSummary = async () => {
   return {
     data: {
       0: {
-        name: "FRANCIS CARLOS",
-        title: "MANAGING DIRECTOR",
-        imageUrl: ceoImage,
+        name: "Jasper Blume",
+        title: "Vice President",
+        imageUrl: jb,
       },
       1: {
-        name: "OMZIN WUNKAEW",
-        title: "DIRECTOR OF EDUCATION",
-        imageUrl: c2,
+        name: "Ishaan Sinha",
+        title: "Vice President",
+        imageUrl: iss,
       },
       2: {
         name: "BHAVESH KUMAR",
-        title: "DIRECTOR OF OPERATIONS",
+        title: "Vice President",
         imageUrl: c3,
       },
       3: {
@@ -156,14 +158,19 @@ const getExecutiveSummary = async () => {
         imageUrl: c4,
       },
       4: {
-        name: "CHARLES CARDOT",
-        title: "ASSOCIATE OF COMPETITION",
-        imageUrl: c5,
+        name: "Arjun Vaish",
+        title: "Vice President",
+        imageUrl: av,
       },
       5: {
-        name: "ANDREW FANG XIONG",
-        title: "MANAGING DIRECTORD",
-        imageUrl: c6,
+        name: "Angela Sun",
+        title: "Vice President",
+        imageUrl: as,
+      },
+      6: {
+        name: "Hoang Nguyen",
+        title: "Infrastructure",
+        imageUrl: hn,
       },
     },
   };

@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
 import { getExecutiveSummary } from "../api/mock";
 
-const ExecutiveSection = () => {
-  interface Executive {
-    name: string;
-    title: string;
-    imageUrl: string;
-  }
+interface Executive {
+  name: string;
+  title: string;
+  imageUrl: string;
+}
 
+const ExecutiveSection = () => {
   const [executives, setExecutives] = useState<{ [key: string]: Executive }>(
     {}
   );
@@ -15,56 +15,52 @@ const ExecutiveSection = () => {
   useEffect(() => {
     (async () => {
       const response = await getExecutiveSummary();
-      console.log(response);
       if (response) {
-        console.log(response.data);
         setExecutives(response.data);
       }
     })();
   }, []);
 
   return (
-    <div className="flex justify-center pt-40">
+    <div className="flex justify-center pt-20 md:pt-40 px-4 md:px-0">
       <div className="container">
-        <div className="w-full">
-          <div className="text-2xl">_MEET THE TEAM</div>
-          <div
-            className="text-5xl font-bold"
-            style={{ fontFamily: "Orbitron" }}
-          >
+        <div className="w-full mb-10 md:mb-20">
+          <div className="text-xl md:text-2xl mb-2">_MEET THE TEAM</div>
+          <div className="text-3xl md:text-5xl font-bold font-['Orbitron']">
             THE EXECUTIVE OF ATC
           </div>
         </div>
-        <div className="grid grid-cols-3 gap-1 mt-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {Object.keys(executives).map((key) => (
             <div
               key={key}
-              className="bg-[#242140] flex-col m-8 border border-6 border-amber-200"
+              className="bg-[#242140] flex flex-col border border-amber-200 p-6 md:p-0 md:pt-8 md:pl-8"
             >
-              <div
-                className="pt-36 pl-6 text-3xl pr-16"
-                style={{ fontFamily: "Orbitron" }}
-              >
-                <div
-                  style={{ fontFamily: "Orbitron" }}
-                  className=" min-h-[80px] text-4xl"
-                >
+              <div className="flex-grow">
+                <div className="font-['Orbitron'] text-2xl md:text-4xl mb-4 md:pr-8">
                   {executives[key].name.toUpperCase()}
                 </div>
-                <div className="text-2xl min-h-[80px]">
-                  {executives[key].title}
+                <div className="text-xl md:text-2xl mb-6 md:mb-10">
+                  {executives[key].title.toUpperCase()}
                 </div>
               </div>
               <div className="flex mt-10 w-full justify-end items-end">
                 <div
-                  className="w-full"
+                  className="hidden lg:block w-full h-48 md:h-64 lg:h-80 lg:w-80"
+                  style={{
+                    backgroundImage: `url("${executives[key].imageUrl}")`,
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
+                    backgroundRepeat: "no-repeat",
+                  }}
+                />
+                <div
+                  className="block lg:hidden w-full h-48 md:h-64 lg:h-80 lg:w-80"
                   style={{
                     backgroundImage: `url("${executives[key].imageUrl}")`,
                     backgroundSize: "contain",
                     backgroundPosition: "center",
                     backgroundRepeat: "no-repeat",
-                    height: "312px",
-                    maxWidth: "312px",
                   }}
                 />
               </div>

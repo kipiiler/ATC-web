@@ -27,7 +27,7 @@ const ContactSection = () => {
           <div className="col-span-3 flex w-full justify-end">
             {" "}
             {/* Modified */}
-            <div className="border-2 border-amber-200 px-40 py-20">
+            {/* <div className="border-2 border-amber-200 px-40 py-20">
               <div className="w-full my-10 text-3xl">JOIN OUR NEWSLETTER</div>
               <div className="w-3/5">
                 <div className="border-b border-white py-2 w-96">
@@ -52,7 +52,7 @@ const ContactSection = () => {
                   </button>
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
