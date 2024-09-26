@@ -1,5 +1,4 @@
 import c3 from "../assets/images/c3.png";
-import c4 from "../assets/images/c4.png";
 import blogHolderImage from "../assets/images/blog_hold.jpg";
 
 import jb from "../assets/images/jb.webp";
