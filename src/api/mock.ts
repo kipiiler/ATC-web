@@ -6,6 +6,7 @@ import jb from "../assets/images/jb.webp";
 import av from "../assets/images/iav.webp";
 import iss from "../assets/images/iss.png";
 import as from "../assets/images/as.webp";
+import tz from "../assets/images/tz.webp";
 import hn from "../assets/images/ho.png";
 
 const getPosts = async () => {
@@ -138,24 +139,20 @@ const getExecutiveSummary = async () => {
   return {
     data: {
       0: {
-        name: "Jasper Blume",
-        title: "Vice President",
-        imageUrl: jb,
+        name: "BHAVESH KUMAR",
+        title: "Managing Director",
+        imageUrl: c3,
       },
       1: {
         name: "Ishaan Sinha",
         title: "Vice President",
         imageUrl: iss,
       },
-      2: {
-        name: "BHAVESH KUMAR",
-        title: "Vice President",
-        imageUrl: c3,
-      },
+      2: { name: "Jasper Blume", title: "Vice President", imageUrl: jb },
       3: {
         name: "THOMAS ZENG",
-        title: "VP OF OUTREACH",
-        imageUrl: c4,
+        title: "Vice President",
+        imageUrl: tz,
       },
       4: {
         name: "Arjun Vaish",
@@ -169,7 +166,7 @@ const getExecutiveSummary = async () => {
       },
       6: {
         name: "Hoang Nguyen",
-        title: "Infrastructure",
+        title: "Vice President",
         imageUrl: hn,
       },
     },
