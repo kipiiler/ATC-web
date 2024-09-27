@@ -58,7 +58,7 @@ const DefaultHeader = () => {
             className="bg-lime-400 text-indigo-500 font-bold py-2 px-4 rounded"
             style={{ fontFamily: "Orbitron", fontWeight: 100 }}
           >
-            APPLY
+            <a href="https://forms.gle/8q9HuCxqLMCAFeo26">APPLY</a>
           </button>
         </div>
       </div>
@@ -104,7 +104,7 @@ const DefaultHeader = () => {
             </div>
             <div className="hidden md:block">
               <button className="bg-lime-400 text-indigo-500 font-['Orbitron'] font-bold py-2 px-4 rounded">
-                APPLY
+                <a href="https://forms.gle/8q9HuCxqLMCAFeo26">APPLY</a>
               </button>
             </div>
             <div className="md:hidden">
@@ -184,7 +184,7 @@ const DefaultHeader = () => {
             <div className="pt-4 pb-3 border-t border-[#242140]">
               <div className="px-2">
                 <button className="w-full bg-lime-400 text-indigo-500 font-['Orbitron'] font-bold py-2 px-4 rounded">
-                  APPLY
+                  <a href="https://forms.gle/8q9HuCxqLMCAFeo26">APPLY</a>
                 </button>
               </div>
             </div>
