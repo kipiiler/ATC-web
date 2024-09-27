@@ -1,12 +1,13 @@
-import c3 from "../assets/images/c3.png";
+import c3 from "../assets/images/bhav.jpeg";
 import blogHolderImage from "../assets/images/blog_hold.jpg";
 
 import jb from "../assets/images/jb.webp";
-import av from "../assets/images/iav.webp";
-import iss from "../assets/images/iss.png";
+import av from "../assets/images/arj.jpg";
+import iss from "../assets/images/ish.jpg";
 import as from "../assets/images/as.webp";
 import tz from "../assets/images/tz.webp";
 import hn from "../assets/images/ho.png";
+import jh from "../assets/images/josh.jpeg";
 
 const getPosts = async () => {
   return [
@@ -167,6 +168,11 @@ const getExecutiveSummary = async () => {
         name: "Hoang Nguyen",
         title: "Vice President",
         imageUrl: hn,
+      },
+      7: {
+        name: "Joshua Hughes-Kuruganti",
+        title: "Vice President",
+        imageUrl: jh,
       },
     },
   };
