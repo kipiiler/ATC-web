@@ -145,7 +145,7 @@ const getExecutiveSummary = async () => {
         imageUrl: c3,
       },
       1: {
-        name: "Ishaan Sinha",
+        name: "Ishan Sinha",
         title: "Vice President",
         imageUrl: iss,
       },
