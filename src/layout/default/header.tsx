@@ -38,7 +38,7 @@ const DefaultHeader = () => {
                 className="text-gray-400 text-sm mr-16"
               >
                 <Link to="/" className="cursor-not-allowed">
-                  BLOGS
+                  RESEARCH
                 </Link>
               </div>
               <div
@@ -58,7 +58,7 @@ const DefaultHeader = () => {
             className="bg-lime-400 text-indigo-500 font-bold py-2 px-4 rounded"
             style={{ fontFamily: "Orbitron", fontWeight: 100 }}
           >
-            <a href="https://forms.gle/8q9HuCxqLMCAFeo26">APPLY</a>
+            <a href="https://forms.gle/8q9HuCxqLMCAFeo26" target="_blank">APPLY</a>
           </button>
         </div>
       </div>
@@ -88,7 +88,7 @@ const DefaultHeader = () => {
                   to="/"
                   className="text-gray-500 block px-3 py-2 rounded-md text-base font-medium cursor-not-allowed"
                 >
-                  BLOGS
+                  RESEARCH
                 </Link>
                 {/* <Link
                   to="/portfolio"
