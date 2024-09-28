@@ -8,6 +8,7 @@ import as from "../assets/images/as.webp";
 import tz from "../assets/images/tz.webp";
 import hn from "../assets/images/ho.png";
 import jh from "../assets/images/josh.jpeg";
+import ga from "../assets/images/ga.jpeg";
 
 const getPosts = async () => {
   return [
@@ -173,6 +174,11 @@ const getExecutiveSummary = async () => {
         name: "Joshua Hughes-Kuruganti",
         title: "Vice President",
         imageUrl: jh,
+      },
+      8: {
+        name: "Gaurang Pendharkar",
+        title: "Vice President",
+        imageUrl: ga,
       },
     },
   };
