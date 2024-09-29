@@ -58,7 +58,9 @@ const DefaultHeader = () => {
             className="bg-lime-400 text-indigo-500 font-bold py-2 px-4 rounded"
             style={{ fontFamily: "Orbitron", fontWeight: 100 }}
           >
-            <a href="https://forms.gle/8q9HuCxqLMCAFeo26" target="_blank">APPLY</a>
+            <a href="https://forms.gle/8q9HuCxqLMCAFeo26" target="_blank">
+              APPLY
+            </a>
           </button>
         </div>
       </div>
