@@ -3,7 +3,7 @@ import React, { useEffect, useRef, useState, useCallback } from "react";
 // Constants
 const BLOCK_SIZE = 30;
 const BOARD_WIDTH = 10;
-const BOARD_HEIGHT = 20;
+const BOARD_HEIGHT = 18;
 const UPDATE_INTERVAL = 500;
 
 // Types
@@ -195,7 +195,7 @@ const TetrisGame: React.FC = () => {
 
   const handleKeyPress = useCallback(
     (e: KeyboardEvent) => {
-      //   if (!gameState.gameStarted || gameState.isPaused) return;
+      if (!gameState.gameStarted || gameState.isPaused) return;
 
       const gameData = gameDataRef.current;
       if (!gameData.currentPiece) return;
@@ -247,28 +247,41 @@ const TetrisGame: React.FC = () => {
     };
   }, [update, draw, handleKeyPress]);
 
-  //   const startGame = () => {
-  //     gameDataRef.current = {
-  //       board: Array.from({ length: BOARD_HEIGHT }, () =>
-  //         Array(BOARD_WIDTH).fill(0)
-  //       ),
-  //       colors: Array.from({ length: BOARD_HEIGHT }, () =>
-  //         Array(BOARD_WIDTH).fill("")
-  //       ),
-  //       currentPiece: createPiece(),
-  //     };
-  //     setGameState({ isPaused: false, gameStarted: true, score: 0 });
-  //   };
+  const startGame = () => {
+    gameDataRef.current = {
+      board: Array.from({ length: BOARD_HEIGHT }, () =>
+        Array(BOARD_WIDTH).fill(0)
+      ),
+      colors: Array.from({ length: BOARD_HEIGHT }, () =>
+        Array(BOARD_WIDTH).fill("")
+      ),
+      currentPiece: createPiece(),
+    };
+    setGameState({ isPaused: false, gameStarted: true, score: 0 });
+  };
 
   return (
     <div className="flex flex-col items-center gap-4">
+      <div className="text-lg font-bold">Score: {gameState.score}</div>
       <canvas
         ref={canvasRef}
         width={BLOCK_SIZE * BOARD_WIDTH}
         height={BLOCK_SIZE * BOARD_HEIGHT}
         className="border border-white"
       />
-      <div className="text-lg font-bold">Score: {gameState.score}</div>
+      <div>
+        <button onClick={startGame} className=" text-white px-4 py-2 rounded">
+          {gameState.gameStarted ? "Restart" : "Start"}
+        </button>
+        <button
+          onClick={() =>
+            setGameState((prev) => ({ ...prev, isPaused: !prev.isPaused }))
+          }
+          disabled={!gameState.gameStarted}
+        >
+          {gameState.isPaused ? "Resume" : "Pause"}
+        </button>
+      </div>
     </div>
   );
 };
