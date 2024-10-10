@@ -1,14 +1,14 @@
-import c3 from "../assets/images/bhav.jpeg";
-import blogHolderImage from "../assets/images/blog_hold.jpg";
+import blogHolderImage from "../assets/images/blog_hold.webp";
 
+import c3 from "../assets/images/bhav.webp";
 import jb from "../assets/images/jb.webp";
-import av from "../assets/images/arj.jpg";
-import iss from "../assets/images/ish.jpg";
+import av from "../assets/images/arj.webp";
+import iss from "../assets/images/ish.webp";
 import as from "../assets/images/as.webp";
 import tz from "../assets/images/tz.webp";
-import hn from "../assets/images/ho.png";
-import jh from "../assets/images/josh.jpeg";
-import ga from "../assets/images/ga.jpeg";
+import hn from "../assets/images/ho.webp";
+import jh from "../assets/images/josh.webp";
+import ga from "../assets/images/ga.webp";
 
 const getPosts = async () => {
   return [
