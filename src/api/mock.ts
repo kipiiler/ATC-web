@@ -5,7 +5,6 @@ import jb from "../assets/images/jb.webp";
 import av from "../assets/images/arj.webp";
 import iss from "../assets/images/ish.webp";
 import as from "../assets/images/as.webp";
-import tz from "../assets/images/tz.webp";
 import hn from "../assets/images/ho.webp";
 import jh from "../assets/images/josh.webp";
 import ga from "../assets/images/ga.webp";
@@ -150,11 +149,6 @@ const getExecutiveSummary = async () => {
         imageUrl: iss,
       },
       2: { name: "Jasper Blume", title: "Vice President", imageUrl: jb },
-      3: {
-        name: "THOMAS ZENG",
-        title: "Vice President",
-        imageUrl: tz,
-      },
       4: {
         name: "Arjun Vaish",
         title: "Vice President",
