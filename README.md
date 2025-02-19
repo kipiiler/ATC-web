@@ -1,30 +1,29 @@
-# React + TypeScript + Vite
+# Algorithmic Trading Club UW Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is the official website for the **Algorithmic Trading Club at UW**. Learn more at [atcuw.org](https://atcuw.org/).
 
-Currently, two official plugins are available:
+## 🚀 Tech Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **React** + **TypeScript** + **Vite**  
+- Fast development with HMR (Hot Module Replacement)  
+- Linting with ESLint  
 
-## Expanding the ESLint configuration
+## 📦 Development Setup
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+1. Clone the repository  
+   ```sh
+   git clone https://github.com/your-repo-url.git
+   cd your-repo
+   ```
 
-- Configure the top-level `parserOptions` property like this:
+2. Install dependencies  
+   ```sh
+   npm install
+   ```
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json', './tsconfig.app.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+3. Start the development server  
+   ```sh
+   npm run dev
+   ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+The site will be available at `http://localhost:5173/` by default.
