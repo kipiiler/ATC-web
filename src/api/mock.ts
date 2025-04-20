@@ -149,16 +149,6 @@ const getExecutiveSummary = async () => {
         imageUrl: iss,
       },
       2: { name: "Jasper Blume", title: "Vice President", imageUrl: jb },
-      4: {
-        name: "Arjun Vaish",
-        title: "Vice President",
-        imageUrl: av,
-      },
-      5: {
-        name: "Angela Sun",
-        title: "Vice President",
-        imageUrl: as,
-      },
       6: {
         name: "Hoang Nguyen",
         title: "Vice President",
