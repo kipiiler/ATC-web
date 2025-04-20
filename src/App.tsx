@@ -5,6 +5,7 @@ import Portfolio from "./page/Portfolio";
 import Blog from "./page/Blog";
 import DefaultLauyout from "./layout/default";
 import BlogPost from "./page/BlogDetail";
+import Directory from "./page/Directory";
 
 function App() {
   const router = createBrowserRouter([
@@ -41,6 +42,14 @@ function App() {
         </DefaultLauyout>
       ),
     },
+    {
+      path: "/people",
+      element: (
+        <DefaultLauyout>
+          <Directory />
+        </DefaultLauyout>
+      ),
+    }
   ]);
 
   return (

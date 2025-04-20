@@ -11,15 +11,14 @@ const DefaultHeader = () => {
 
   return (
     <>
-      <div className="hidden lg:grid w-auto bg-[#3E329F] grid-cols-10 gap-4">
+      <div className="hidden lg:grid w-auto bg-[#242140] grid-cols-10 gap-4">
         <div
+          className="items-center font-['Orbitron'] justify-center flex col-span-2 p-4 ml-4"
           style={{
-            fontFamily: "Orbitron",
             fontWeight: "bold",
             fontSize: "32px",
             color: "#FFFFFF",
           }}
-          className="items-center justify-center flex col-span-2 p-4 ml-4"
         >
           ATC@ UW
         </div>
@@ -55,7 +54,7 @@ const DefaultHeader = () => {
         <div className="col-span-1"> </div>
         <div className="col-span-2 h-full items-center flex justify-center">
           <button
-            className="bg-lime-400 text-indigo-500 font-bold py-2 px-4 rounded"
+            className="text-white font-bold py-2 px-4 rounded border-2 border-white"
             style={{ fontFamily: "Orbitron", fontWeight: 100 }}
           >
             <a href="https://forms.gle/8q9HuCxqLMCAFeo26" target="_blank">
@@ -64,13 +63,13 @@ const DefaultHeader = () => {
           </button>
         </div>
       </div>
-      <div className="w-full bg-[#3E329F] block lg:hidden">
+      <div className="w-full bg-[#242140] block lg:hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center">
               <div className="flex-shrink-0">
                 <span className="font-['Orbitron'] font-bold text-2xl md:text-3xl text-white">
-                  ATC@ UW
+                  ATC @UW
                 </span>
               </div>
             </div>
@@ -105,7 +104,7 @@ const DefaultHeader = () => {
               </div>
             </div>
             <div className="hidden md:block">
-              <button className="bg-lime-400 text-indigo-500 font-['Orbitron'] font-bold py-2 px-4 rounded">
+              <button className="text-white font-bold py-2 px-4 rounded border-2 border-white font-['Orbitron']">
                 <a href="https://forms.gle/8q9HuCxqLMCAFeo26">APPLY</a>
               </button>
             </div>

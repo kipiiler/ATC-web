@@ -2,9 +2,9 @@ import TetrisGame from "./TetrisGame";
 
 const HeroSection = () => {
   return (
-    <div className="flex justify-center mb-20">
+    <div className="flex justify-center mb-20 sm:mx-0 md:mx-72 lg:mx-96">
       <div className="grid grid-cols-5 w-full mt-0 md:mt-16 container">
-        <div className="col-span-5 lg:col-span-3 pt-32 md:pt-60 pl-10 md:pl-20">
+        <div className="col-span-5 lg:col-span-3 pt-32 md:pt-60">
           <div className="font-['Orbitron'] text-3xl md:text-5xl">
             Decode markets
           </div>

@@ -1,7 +1,7 @@
 const AboutSection = () => {
   return (
     <div className="bg-[#242140] flex justify-center pt-20 md:pt-40 pb-10 md:pb-20">
-      <div className="container px-4 md:px-10">
+      <div className="container px-4 md:px-20">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
           <div>
             <div className="text-xl md:text-2xl mb-2">_ABOUT</div>

@@ -1,10 +1,10 @@
 import React, { useEffect, useState, useMemo } from "react";
-import { getExecutiveSummary } from "../api/mock";
+import { getExecutiveSummary, getMembers } from "../api/mock";
 import { People } from "../types/People";
 import PeopleCard from "./PeopleCard";
 
   
-interface ExecutivesState {
+interface MemberState {
   data: Record<string, People>;
   isLoading: boolean;
   error: string | null;
@@ -29,8 +29,8 @@ const ErrorMessage = ({ message }: { message: string }) => (
   </div>
 );
 
-const ExecutiveSection = () => {
-  const [state, setState] = useState<ExecutivesState>({
+const MembersSection = () => {
+  const [state, setState] = useState<MemberState>({
     data: {},
     isLoading: true,
     error: null,
@@ -41,7 +41,7 @@ const ExecutiveSection = () => {
 
     const fetchExecutives = async () => {
       try {
-        const response = await getExecutiveSummary();
+        const response = await getMembers();
         if (isMounted && response) {
           setState((prev) => ({
             ...prev,
@@ -87,9 +87,8 @@ const ExecutiveSection = () => {
     <section className="flex justify-center pt-20 md:pt-40 px-4 md:px-0">
       <div className="container">
         <header className="w-full mb-10 md:mb-20">
-          <h2 className="text-xl md:text-2xl mb-2">_MEET THE TEAM</h2>
           <h1 className="text-3xl md:text-5xl font-bold font-['Orbitron']">
-            THE EXECUTIVE OF ATC
+            OUR TALENTS
           </h1>
         </header>
 
@@ -107,5 +106,5 @@ const ExecutiveSection = () => {
   );
 };
 
-const MemoizedExecutiveSection = React.memo(ExecutiveSection);
-export default MemoizedExecutiveSection;
+const MemoizedMembersSection = React.memo(MembersSection);
+export default MemoizedMembersSection;

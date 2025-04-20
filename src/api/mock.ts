@@ -9,6 +9,8 @@ import hn from "../assets/images/ho.webp";
 import jh from "../assets/images/josh.webp";
 import ga from "../assets/images/ga.webp";
 
+import avatar from "../assets/images/avatar.png"
+
 const getPosts = async () => {
   return [
     {
@@ -168,6 +170,33 @@ const getExecutiveSummary = async () => {
   };
 };
 
+const getMembers = async () => {
+  return {
+    data: {
+      0: {
+        name: "Members",
+        title: "Title",
+        imageUrl: avatar,
+      },
+      1: {
+        name: "Members",
+        title: "Title",
+        imageUrl: avatar,
+      },
+      2: {
+        name: "Ishan Sinha",
+        title: "Title",
+        imageUrl: avatar,
+      },
+      3: {
+        name: "Bhavesh Kumar",
+        title: "Title",
+        imageUrl: avatar,
+      },
+    },
+  }
+}
+
 const getPortfolio = async () => {
   return {
     data: {
@@ -218,4 +247,5 @@ export {
   getPaths,
   getPostDetails,
   getPosts,
+  getMembers,
 };

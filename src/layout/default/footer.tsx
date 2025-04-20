@@ -1,7 +1,7 @@
 const DefaultFooter = () => {
   return (
     <footer className="w-full bg-[#242140]">
-      <div className="container mx-auto py-4 block lg:flex justify-between">
+      <div className="container mx-auto py-10 block lg:flex justify-between">
         <div className="text-sm pl-4 w-full md:w-auto">
           University of Washington, Seattle, WA, 98195
         </div>
