@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useMemo } from "react";
-import { getExecutiveSummary, getMembers } from "../api/mock";
+import { getMembers } from "../api/mock";
 import { People } from "../types/People";
 import PeopleCard from "./PeopleCard";
 

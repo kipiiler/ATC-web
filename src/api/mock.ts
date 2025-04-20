@@ -2,9 +2,7 @@ import blogHolderImage from "../assets/images/blog_hold.webp";
 
 import c3 from "../assets/images/bhav.webp";
 import jb from "../assets/images/jb.webp";
-import av from "../assets/images/arj.webp";
 import iss from "../assets/images/ish.webp";
-import as from "../assets/images/as.webp";
 import hn from "../assets/images/ho.webp";
 import jh from "../assets/images/josh.webp";
 import ga from "../assets/images/ga.webp";
