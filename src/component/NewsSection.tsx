@@ -14,7 +14,7 @@ const NewsSection = () => {
     },
     {
       id: 2,
-      title: "Congrat to [Jack Li](https://www.linkedin.com/in/jack-li-890a0623b/) for landing an internship at [Jane Street](https://www.janestreet.com/join-jane-street/programs-and-events/fttp/)",
+      title: "Congrat to [Jack Li](https://www.linkedin.com/in/jack-li-890a0623b/) for landing an offer for [Jane Street's first year trading and technology program](https://www.janestreet.com/join-jane-street/programs-and-events/fttp/)",
       date: "March 2025",
       description: "Last week's guest speaker shared insights on how quantitative strategies are reshaping market dynamics.",
       category: "Career",
