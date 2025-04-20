@@ -2,12 +2,12 @@ import blogHolderImage from "../assets/images/blog_hold.webp";
 
 import c3 from "../assets/images/bhav.webp";
 import jb from "../assets/images/jb.webp";
-import av from "../assets/images/arj.webp";
 import iss from "../assets/images/ish.webp";
-import as from "../assets/images/as.webp";
 import hn from "../assets/images/ho.webp";
 import jh from "../assets/images/josh.webp";
 import ga from "../assets/images/ga.webp";
+
+import avatar from "../assets/images/avatar.png"
 
 const getPosts = async () => {
   return [
@@ -149,16 +149,6 @@ const getExecutiveSummary = async () => {
         imageUrl: iss,
       },
       2: { name: "Jasper Blume", title: "Vice President", imageUrl: jb },
-      4: {
-        name: "Arjun Vaish",
-        title: "Vice President",
-        imageUrl: av,
-      },
-      5: {
-        name: "Angela Sun",
-        title: "Vice President",
-        imageUrl: as,
-      },
       6: {
         name: "Hoang Nguyen",
         title: "Vice President",
@@ -177,6 +167,33 @@ const getExecutiveSummary = async () => {
     },
   };
 };
+
+const getMembers = async () => {
+  return {
+    data: {
+      0: {
+        name: "Members",
+        title: "Title",
+        imageUrl: avatar,
+      },
+      1: {
+        name: "Members",
+        title: "Title",
+        imageUrl: avatar,
+      },
+      2: {
+        name: "Ishan Sinha",
+        title: "Title",
+        imageUrl: avatar,
+      },
+      3: {
+        name: "Bhavesh Kumar",
+        title: "Title",
+        imageUrl: avatar,
+      },
+    },
+  }
+}
 
 const getPortfolio = async () => {
   return {
@@ -228,4 +245,5 @@ export {
   getPaths,
   getPostDetails,
   getPosts,
+  getMembers,
 };

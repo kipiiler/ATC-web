@@ -1,30 +1,30 @@
 const ContactSection = () => {
   return (
-    <div className="bg-[#242140] flex justify-center mt-20 pt-20 mp-40">
-      <div className="container pt-20 pb-20">
+    <div className="flex justify-center mt-20 mp-40">
+      <div className="container">
         <div className="grid grid-cols-5">
           <div className="col-span-2 h-full">
             <div className="flex-col pl-20 h-full items-center">
               <div className="text-5xl" style={{ fontFamily: "Orbitron" }}>
                 GET IN TOUCH
               </div>
-              <div className="mt-60">
-                <div className="text-2xl my-2">
-                  <a href="mailto:atc@uw.edu">EMAIL</a>
-                </div>
-                <div className="text-2xl my-2">
-                  <a href="https://instagram.com">
-                    {"instagram".toUpperCase()}
-                  </a>
-                </div>
-                <div className="text-2xl my-2">
-                  {" "}
-                  <a href="https://linkedin.com">{"Linkedin".toUpperCase()}</a>
-                </div>
-              </div>
             </div>
           </div>
           <div className="col-span-3 flex w-full justify-end">
+            <div className="px-40 py-20">
+              <div className="text-2xl my-2">
+                <a href="mailto:atc@uw.edu">EMAIL</a>
+              </div>
+              <div className="text-2xl my-2">
+                <a href="https://www.instagram.com/atc.uw/">
+                  {"instagram".toUpperCase()}
+                </a>
+              </div>
+              <div className="text-2xl my-2">
+                {" "}
+                <a href="https://www.linkedin.com/company/algorithmic-trading-club-at-uw/">{"Linkedin".toUpperCase()}</a>
+              </div>
+            </div>
             {" "}
             {/* Modified */}
             {/* <div className="border-2 border-amber-200 px-40 py-20">

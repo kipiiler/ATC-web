@@ -1,14 +1,14 @@
 import AboutSection from "../component/AboutSection";
 import ContactSection from "../component/ContactSection";
-import ExecutiveSection from "../component/ExecutiveSection";
 import HeroSection from "../component/HeroSection";
+import NewsSection from "../component/NewsSection";
 
 const Home = () => {
   return (
     <div>
       <HeroSection />
+      <NewsSection />
       <AboutSection />
-      <ExecutiveSection />
       <ContactSection />
     </div>
   );
