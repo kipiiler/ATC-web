@@ -43,6 +43,12 @@ const DefaultHeader = () => {
           >
             HOME
           </Link>
+          <Link
+            to="/people" 
+            className="text-white hover:text-blue-400 transition-colors font-medium text-lg"
+          >
+            DIRECTORY
+          </Link>
           <Link 
             to="/" 
             className="text-gray-400 hover:text-gray-300 transition-colors font-medium text-lg cursor-not-allowed"
@@ -129,6 +135,12 @@ const DefaultHeader = () => {
               onClick={() => setIsMenuOpen(false)}
             >
               HOME
+            </Link>
+            <Link
+              to="/people" 
+              className="block py-2 text-white hover:text-blue-400 transition-colors font-medium"
+            >
+              DIRECTORY
             </Link>
             <Link
               to="/"
