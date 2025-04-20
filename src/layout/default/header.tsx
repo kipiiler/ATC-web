@@ -1,9 +1,24 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./header.css";
 
 const DefaultHeader = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  // Handle scroll effect for shadow and background opacity
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 10) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -11,187 +26,138 @@ const DefaultHeader = () => {
 
   return (
     <>
-      <div className="hidden lg:grid w-auto bg-[#242140] grid-cols-10 gap-4">
-        <div
-          className="items-center font-['Orbitron'] justify-center flex col-span-2 p-4 ml-4"
-          style={{
-            fontWeight: "bold",
-            fontSize: "32px",
-            color: "#FFFFFF",
-          }}
-        >
-          ATC@ UW
+      {/* Desktop Header */}
+      <div 
+        className={`hidden lg:flex w-full px-6 bg-[#242140] py-6 items-center justify-between fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+          scrolled ? 'shadow-lg bg-opacity-95' : 'bg-opacity-100'
+        }`}
+      >
+        <div className="font-['Orbitron'] font-bold text-3xl text-white">
+          ATC @UW
         </div>
-        <div className="col-span-1"> </div>
-        <div className="col-span-4 relative bg-[#242140] rounded-full">
-          <div className="flex justify-center items-center h-full nav-link">
-            <div className="flex items-center">
-              <div
-                style={{ fontSize: 18 }}
-                className="text-white text-sm mr-16 ml-16"
-              >
-                <Link to="/">HOME</Link>
-              </div>
-              <div
-                style={{ fontSize: 18 }}
-                className="text-gray-400 text-sm mr-16"
-              >
-                <Link to="/" className="cursor-not-allowed">
-                  RESEARCH
-                </Link>
-              </div>
-              <div
-                style={{ fontSize: 18, fontWeight: 400 }}
-                className="text-gray-400 text-sm mr-16"
-              >
-                <Link to="/" className="cursor-not-allowed">
-                  PORTFOLIO
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="col-span-1"> </div>
-        <div className="col-span-2 h-full items-center flex justify-center">
-          <button
-            className="text-white font-bold py-2 px-4 rounded border-2 border-white"
-            style={{ fontFamily: "Orbitron", fontWeight: 100 }}
+        
+        <div className="flex items-center space-x-12">
+          <Link 
+            to="/" 
+            className="text-white hover:text-blue-400 transition-colors font-medium text-lg"
           >
-            <a href="https://forms.gle/8q9HuCxqLMCAFeo26" target="_blank">
-              APPLY
-            </a>
-          </button>
+            HOME
+          </Link>
+          <Link 
+            to="/" 
+            className="text-gray-400 hover:text-gray-300 transition-colors font-medium text-lg cursor-not-allowed"
+          >
+            RESEARCH
+          </Link>
+          <Link 
+            to="/" 
+            className="text-gray-400 hover:text-gray-300 transition-colors font-medium text-lg cursor-not-allowed"
+          >
+            PORTFOLIO
+          </Link>
         </div>
+        
+        <a 
+          href="https://forms.gle/8q9HuCxqLMCAFeo26" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="border-2 border-white hover:border-blue-400 hover:text-blue-400 text-white transition-colors py-2 px-6 font-['Orbitron'] font-medium"
+        >
+          APPLY
+        </a>
       </div>
-      <div className="w-full bg-[#242140] block lg:hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16">
-            <div className="flex items-center">
-              <div className="flex-shrink-0">
-                <span className="font-['Orbitron'] font-bold text-2xl md:text-3xl text-white">
-                  ATC @UW
-                </span>
-              </div>
+
+      {/* Mobile Header */}
+      <div className={`w-full bg-[#242140] lg:hidden fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        scrolled ? 'shadow-lg bg-opacity-95' : 'bg-opacity-100'
+      }`}>
+        <div className="px-4 py-4">
+          <div className="flex items-center justify-between">
+            <div className="flex-shrink-0">
+              <span className="font-['Orbitron'] font-bold text-2xl md:text-3xl text-white">
+                ATC @UW
+              </span>
             </div>
-            <div className="hidden md:block">
-              <div className="ml-10 flex items-baseline space-x-4">
-                <Link
-                  to="/"
-                  className="text-white hover:bg-[#242140] px-3 py-2 rounded-md text-sm font-medium"
+            
+            <button
+              onClick={toggleMenu}
+              className="inline-flex items-center justify-center p-2 rounded-md text-white hover:text-blue-400 focus:outline-none"
+              aria-expanded={isMenuOpen}
+            >
+              <span className="sr-only">Open main menu</span>
+              {isMenuOpen ? (
+                <svg
+                  className="block h-6 w-6"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
                 >
-                  HOME
-                </Link>
-                {/* <Link
-                  to="/blogs"
-                  className="text-white hover:bg-[#242140] px-3 py-2 rounded-md text-sm font-medium"
-                > */}
-                <Link
-                  to="/"
-                  className="text-gray-500 block px-3 py-2 rounded-md text-base font-medium cursor-not-allowed"
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                </svg>
+              ) : (
+                <svg
+                  className="block h-6 w-6"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
                 >
-                  RESEARCH
-                </Link>
-                {/* <Link
-                  to="/portfolio"
-                  className="text-white hover:bg-[#242140] px-3 py-2 rounded-md text-sm font-medium"
-                              > */}
-                <Link
-                  to="/"
-                  className="text-gray-500 block px-3 py-2 rounded-md text-base font-medium cursor-not-allowed"
-                >
-                  PORTFOLIO
-                </Link>
-              </div>
-            </div>
-            <div className="hidden md:block">
-              <button className="text-white font-bold py-2 px-4 rounded border-2 border-white font-['Orbitron']">
-                <a href="https://forms.gle/8q9HuCxqLMCAFeo26">APPLY</a>
-              </button>
-            </div>
-            <div className="md:hidden">
-              <button
-                onClick={toggleMenu}
-                className="inline-flex items-center justify-center p-2 rounded-md text-white hover:text-white hover:bg-[#242140] focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
-              >
-                <span className="sr-only">Open main menu</span>
-                {isMenuOpen ? (
-                  <svg
-                    className="block h-6 w-6"
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    aria-hidden="true"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M6 18L18 6M6 6l12 12"
-                    />
-                  </svg>
-                ) : (
-                  <svg
-                    className="block h-6 w-6"
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    aria-hidden="true"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M4 6h16M4 12h16M4 18h16"
-                    />
-                  </svg>
-                )}
-              </button>
-            </div>
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M4 6h16M4 12h16M4 18h16"
+                  />
+                </svg>
+              )}
+            </button>
           </div>
         </div>
 
+        {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="md:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-              <Link
-                to="/"
-                className="text-white hover:bg-[#242140] block px-3 py-2 rounded-md text-base font-medium"
+          <div className="px-4 py-3 space-y-4 bg-[#1e1c36] shadow-lg">
+            <Link
+              to="/"
+              className="block py-2 text-white hover:text-blue-400 transition-colors font-medium"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              HOME
+            </Link>
+            <Link
+              to="/"
+              className="block py-2 text-gray-400 cursor-not-allowed"
+            >
+              RESEARCH
+            </Link>
+            <Link
+              to="/"
+              className="block py-2 text-gray-400 cursor-not-allowed"
+            >
+              PORTFOLIO
+            </Link>
+            <div className="pt-4 border-t border-gray-700">
+              <a
+                href="https://forms.gle/8q9HuCxqLMCAFeo26"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block w-full text-center bg-blue-500 hover:bg-blue-600 text-white font-['Orbitron'] py-3 rounded-sm transition-colors"
               >
-                HOME
-              </Link>
-              {/* <Link
-                to="/blogs"
-                className="text-white hover:bg-[#242140] block px-3 py-2 rounded-md text-base font-medium"
-              > */}
-              <Link
-                to="/"
-                className="text-gray-500 block px-3 py-2 rounded-md text-base font-medium cursor-not-allowed"
-              >
-                BLOGS
-              </Link>
-              {/* <Link
-                to="/portfolio"
-                className="text-white hover:bg-[#242140] block px-3 py-2 rounded-md text-base font-medium"
-              > */}
-              <Link
-                to="/"
-                className="text-gray-500 block px-3 py-2 rounded-md text-base font-medium cursor-not-allowed"
-              >
-                PORTFOLIO
-              </Link>
-            </div>
-            <div className="pt-4 pb-3 border-t border-[#242140]">
-              <div className="px-2">
-                <button className="w-full bg-lime-400 text-indigo-500 font-['Orbitron'] font-bold py-2 px-4 rounded">
-                  <a href="https://forms.gle/8q9HuCxqLMCAFeo26">APPLY</a>
-                </button>
-              </div>
+                APPLY
+              </a>
             </div>
           </div>
         )}
       </div>
+      
+      {/* Spacer to prevent content from going under fixed header */}
+      <div className="h-16 lg:h-20"></div>
     </>
   );
 };
