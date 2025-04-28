@@ -8,7 +8,6 @@ import jh from "../assets/images/josh.webp";
 import ga from "../assets/images/ga.webp";
 import fc from "../assets/images/franco.webp";
 
-import avatar from "../assets/images/avatar.png"
 
 const getPosts = async () => {
   return [
