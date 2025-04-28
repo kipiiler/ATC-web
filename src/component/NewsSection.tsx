@@ -5,8 +5,8 @@ const NewsSection = () => {
   const allNewsItems = [
     {
       id: 1,
-      title: "Congrat to [Bhavesh Kumar](https://www.linkedin.com/in/bhavkumar/) had one [paper](https://www.researchgate.net/publication/389739949_Enhancing_Simple_Moving_Average_Strategies_with_Reinforcement_Learning_A_Q-Learning_Approach) accepted for [IEEE Symposium on Computational Intelligence for Financial Engineering and Economics](https://attend.ieee.org/ssci-2023/ieee-symposium-on-computational-intelligence-for-financial-engineering-and-economics-ieee-cifer/)!",
-      date: "March 2025",
+      title: "Congrats to [Bhavesh Kumar](https://www.linkedin.com/in/bhavkumar/) for presenting his [work](https://www.researchgate.net/publication/389739949_Enhancing_Simple_Moving_Average_Strategies_with_Reinforcement_Learning_A_Q-Learning_Approach) at [2024 IEEE Symposium on Computational Intelligence for Financial Engineering and Economics](https://ieeexplore.ieee.org/xpl/conhome/10772730/proceeding)!",
+      date: "October 2025",
       description: "Join us for our upcoming Python for Finance workshop series starting next week. Learn algorithmic trading basics and advanced techniques.",
       category: "Research",
       hasDetails: false,
@@ -14,7 +14,7 @@ const NewsSection = () => {
     },
     {
       id: 2,
-      title: "Congrat to [Jack Li](https://www.linkedin.com/in/jack-li-890a0623b/) for landing an offer for [Jane Street's first year trading and technology program](https://www.janestreet.com/join-jane-street/programs-and-events/fttp/)",
+      title: "Congrats to [Jack Li](https://www.linkedin.com/in/jack-li-890a0623b/) for participating at [Jane Street's first year trading and technology program](https://www.janestreet.com/join-jane-street/programs-and-events/fttp/)",
       date: "March 2025",
       description: "Last week's guest speaker shared insights on how quantitative strategies are reshaping market dynamics.",
       category: "Career",

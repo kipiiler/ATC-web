@@ -88,7 +88,7 @@ const MembersSection = () => {
       <div className="container">
         <header className="w-full mb-10 md:mb-20">
           <h1 className="text-3xl md:text-5xl font-bold font-['Orbitron']">
-            OUR TALENTS
+            ALUMNI
           </h1>
         </header>
 
