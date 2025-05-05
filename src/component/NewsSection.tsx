@@ -4,6 +4,24 @@ const NewsSection = () => {
   // Sample news data - replace with your actual news items
   const allNewsItems = [
     {
+      id: 31,
+      title: "[Huskyholdem](https://huskyholdem.atcuw.org/) is offcially launch!",
+      date: "April 2025",
+      description: "Huskyholdem is a poker bot game designed for students at the University of Washington by our club. It is a fun and engaging way to learn about poker strategy and pratice your programming skills.",
+      category: "Event",
+      hasDetails: true,
+      link: ""
+    },
+    {
+      id: 12,
+      title: "Congrat to [Ishan Sinha](https://www.linkedin.com/in/ishan-sinha-7b74b51aa/) and [Ishan Gupta](https://www.linkedin.com/in/ishangu/) on participating in [DE Shaw Connect Program](https://www.linkedin.com/company/d.-e.-shaw-&-co./)!",
+      date: "March 2025",
+      description: "",
+      category: "Career",
+      hasDetails: false,
+      link: ""
+    },
+    {
       id: 1,
       title: "Congrats to [Bhavesh Kumar](https://www.linkedin.com/in/bhavkumar/) for presenting his [work](https://www.researchgate.net/publication/389739949_Enhancing_Simple_Moving_Average_Strategies_with_Reinforcement_Learning_A_Q-Learning_Approach) at [2024 IEEE Symposium on Computational Intelligence for Financial Engineering and Economics](https://ieeexplore.ieee.org/xpl/conhome/10772730/proceeding)!",
       date: "October 2025",
