@@ -1,3 +1,7 @@
+import JaneStreetImage from "../assets/images/janeStreetLogo.png";
+import MorganStanleyImage from "../assets/images/morganStanleyLogo.png";
+import QuantConnectImage from "../assets/images/quantConnectLogo.png";
+
 const SponsorsSection = () => {
   return (
     <div className="bg-[#111827] flex justify-center pt-20 md:pt-40 pb-10 md:pb-20">
@@ -30,21 +34,21 @@ const SponsorsSection = () => {
         <div className="flex justify-center items-center gap-8">
           <div className="flex justify-center items-center">
             <img
-              src="src/assets/images/janeStreetLogo.png"
+              src={JaneStreetImage}
               alt="Jane Street"
               className="h-28 object-contain invert pt-[25px]"
             />
           </div>
           <div className="flex justify-center items-center">
             <img
-              src="src/assets/images/morganStanleyLogo.png"
+              src={MorganStanleyImage}
               alt="Morgan Stanley"
               className="h-24 object-contain invert pt-[28px]"
             />
           </div>
           <div className="flex justify-center items-center">
             <img
-              src="src/assets/images/quantConnectLogo.png"
+              src={QuantConnectImage}
               alt="QuantConnect"
               className="h-14 object-contain"
             />
