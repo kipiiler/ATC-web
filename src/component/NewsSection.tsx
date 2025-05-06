@@ -4,8 +4,26 @@ const NewsSection = () => {
   // Sample news data - replace with your actual news items
   const allNewsItems = [
     {
+      id: 100,
+      title: "Congrats to [Bhaumik Mehta](https://www.linkedin.com/in/bhaumik-m/) and [Patricia Dao](https://www.linkedin.com/in/patricia-d-382882301/) for their sixth month in [Goldman Sach's Possibilities Summit](https://www.goldmansachs.com/careers/students/programs-and-internships/americas/possibilities-summits)",
+      date: "April 2025",
+      description: "",
+      category: "Career",
+      hasDetails: true,
+      link: ""
+    },
+    {
+      id: 101,
+      title: "Congrats to [Patricia Dao](https://www.linkedin.com/in/patricia-d-382882301/) for presenting her work at the [2025 Pacific Northwest Section of the Mathematical Association of America](https://faculty.washington.edu/etou/maapnw2025/home.html)",
+      date: "April 2025",
+      description: "",
+      category: "Research",
+      hasDetails: true,
+      link: ""
+    },
+    {
       id: 31,
-      title: "[Huskyholdem](https://huskyholdem.atcuw.org/) is offcially launch!",
+      title: "[Huskyholdem](https://huskyholdem.atcuw.org/) is offcially launched!",
       date: "April 2025",
       description: "Huskyholdem is a poker bot game designed for students at the University of Washington by our club. It is a fun and engaging way to learn about poker strategy and pratice your programming skills.",
       category: "Event",
@@ -14,7 +32,7 @@ const NewsSection = () => {
     },
     {
       id: 12,
-      title: "Congrat to [Ishan Sinha](https://www.linkedin.com/in/ishan-sinha-7b74b51aa/) and [Ishan Gupta](https://www.linkedin.com/in/ishangu/) on participating in [DE Shaw Connect Program](https://www.linkedin.com/company/d.-e.-shaw-&-co./)!",
+      title: "Congrats to [Ishan Sinha](https://www.linkedin.com/in/ishan-sinha-7b74b51aa/) and [Ishan Gupta](https://www.linkedin.com/in/ishangu/) on participating in [DE Shaw Connect Program](https://www.linkedin.com/company/d.-e.-shaw-&-co./)!",
       date: "March 2025",
       description: "",
       category: "Career",
