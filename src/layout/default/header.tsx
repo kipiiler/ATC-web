@@ -61,10 +61,16 @@ const DefaultHeader = () => {
           >
             PORTFOLIO
           </Link>
+          <Link 
+            to="https://huskyholdem.atcuw.org/" 
+            className="text-white hover:text-blue-400 transition-colors font-medium text-lg"
+          >
+            HUSKY HOLD EM'
+          </Link>
         </div>
         
         <a 
-          href="https://forms.gle/8q9HuCxqLMCAFeo26" 
+          href="https://forms.gle/Vo1zRUPN4f5x3xc5A" 
           target="_blank" 
           rel="noopener noreferrer"
           className="border-2 border-white hover:border-blue-400 hover:text-blue-400 text-white transition-colors py-2 px-6 font-['Orbitron'] font-medium"
