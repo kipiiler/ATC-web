@@ -9,11 +9,11 @@ const SponsorsSection = () => {
         {/* Centered title block */}
         <div className="flex justify-center mb-12">
           <div className="text-left">
-            <div className="text-xl md:text-2xl mb-2 text-center md:text-left">_SPONSORS</div>
-            <div className="text-3xl md:text-5xl font-['Orbitron'] mb-2 text-center md:text-left">
+            <div className="text-xl md:text-2xl mb-2 text-center">_SPONSORS_</div>
+            <div className="text-3xl md:text-5xl font-['Orbitron'] mb-2 text-center">
               OUR SUPPORTERS
             </div>
-            <div className="text-3xl md:text-5xl font-['Orbitron'] text-center md:text-left">
+            <div className="text-3xl md:text-5xl font-['Orbitron'] text-center">
               AND PARTNERS
             </div>
           </div>
