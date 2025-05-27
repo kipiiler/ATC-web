@@ -17,7 +17,7 @@ interface Piece {
   color: string;
 }
 
-// Game constants
+// Tetromino Shapes and Colors
 const TETROMINOES: number[][][] = [
   [[1, 1, 1, 1]],
   [
@@ -60,49 +60,40 @@ const TetrisGame: React.FC = () => {
     gameStarted: false,
     score: 0,
   });
+
   const gameDataRef = useRef({
-    board: Array.from({ length: BOARD_HEIGHT }, () =>
-      Array(BOARD_WIDTH).fill(0)
-    ),
-    colors: Array.from({ length: BOARD_HEIGHT }, () =>
-      Array(BOARD_WIDTH).fill("")
-    ),
+    board: Array.from({ length: BOARD_HEIGHT }, () => Array(BOARD_WIDTH).fill(0)),
+    colors: Array.from({ length: BOARD_HEIGHT }, () => Array(BOARD_WIDTH).fill("")),
     currentPiece: null as Piece | null,
   });
 
-  const createPiece = useCallback(
-    (): Piece => ({
-      shape: TETROMINOES[Math.floor(Math.random() * TETROMINOES.length)],
-      color: COLOR_PALETTE[Math.floor(Math.random() * COLOR_PALETTE.length)],
-      x: Math.floor(BOARD_WIDTH / 2) - 1,
-      y: 0,
-    }),
-    []
-  );
+  const createPiece = (): Piece => ({
+    shape: TETROMINOES[Math.floor(Math.random() * TETROMINOES.length)],
+    color: COLOR_PALETTE[Math.floor(Math.random() * COLOR_PALETTE.length)],
+    x: Math.floor(BOARD_WIDTH / 2) - 1,
+    y: 0,
+  });
 
-  const collision = useCallback((piece: Piece, board: Board): boolean => {
+  const collision = (piece: Piece, board: Board): boolean => {
     return piece.shape.some((row, y) =>
       row.some((value, x) => value && (board[y + piece.y]?.[x + piece.x] ?? 1))
     );
-  }, []);
+  };
 
-  const mergePiece = useCallback(
-    (piece: Piece, board: Board, colors: ColorBoard) => {
-      piece.shape.forEach((row, y) => {
-        row.forEach((value, x) => {
-          if (value) {
-            board[y + piece.y][x + piece.x] = value;
-            colors[y + piece.y][x + piece.x] = piece.color;
-          }
-        });
+  const mergePiece = (piece: Piece, board: Board, colors: ColorBoard) => {
+    piece.shape.forEach((row, y) => {
+      row.forEach((value, x) => {
+        if (value) {
+          board[y + piece.y][x + piece.x] = value;
+          colors[y + piece.y][x + piece.x] = piece.color;
+        }
       });
-    },
-    []
-  );
+    });
+  };
 
-  const checkLines = useCallback((board: Board, colors: ColorBoard): number => {
+  const checkLines = (board: Board, colors: ColorBoard): number => {
     let linesCleared = 0;
-    for (let y = BOARD_HEIGHT - 1; y >= 0; ) {
+    for (let y = BOARD_HEIGHT - 1; y >= 0;) {
       if (board[y].every((cell) => cell)) {
         board.splice(y, 1);
         colors.splice(y, 1);
@@ -114,20 +105,18 @@ const TetrisGame: React.FC = () => {
       }
     }
     return linesCleared;
-  }, []);
+  };
 
-  const draw = useCallback(() => {
+  const draw = () => {
     const canvas = canvasRef.current;
     const ctx = canvas?.getContext("2d");
     if (!ctx || !canvas) return;
 
     const { board, colors, currentPiece } = gameDataRef.current;
 
-    // Clear canvas
-    ctx.fillStyle = "rgb(61,51,153)";
+    ctx.fillStyle = "#BC9D5D";
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-    // Draw board
     for (let y = 0; y < BOARD_HEIGHT; y++) {
       for (let x = 0; x < BOARD_WIDTH; x++) {
         if (board[y][x]) {
@@ -141,7 +130,6 @@ const TetrisGame: React.FC = () => {
       }
     }
 
-    // Draw current piece
     if (currentPiece) {
       ctx.fillStyle = currentPiece.color;
       currentPiece.shape.forEach((row, y) => {
@@ -156,22 +144,17 @@ const TetrisGame: React.FC = () => {
         });
       });
     }
-  }, []);
+  };
 
-  const update = useCallback(() => {
+  const update = () => {
     if (gameState.isPaused) return;
-
     const gameData = gameDataRef.current;
+
     if (!gameData.currentPiece) {
       gameData.currentPiece = createPiece();
       if (collision(gameData.currentPiece, gameData.board)) {
-        // Game Over
-        gameData.board = Array.from({ length: BOARD_HEIGHT }, () =>
-          Array(BOARD_WIDTH).fill(0)
-        );
-        gameData.colors = Array.from({ length: BOARD_HEIGHT }, () =>
-          Array(BOARD_WIDTH).fill("")
-        );
+        gameData.board = Array.from({ length: BOARD_HEIGHT }, () => Array(BOARD_WIDTH).fill(0));
+        gameData.colors = Array.from({ length: BOARD_HEIGHT }, () => Array(BOARD_WIDTH).fill(""));
         setGameState((prev) => ({ ...prev, gameStarted: false }));
         return;
       }
@@ -184,77 +167,60 @@ const TetrisGame: React.FC = () => {
       mergePiece(gameData.currentPiece, gameData.board, gameData.colors);
       const linesCleared = checkLines(gameData.board, gameData.colors);
       if (linesCleared) {
-        setGameState((prev) => ({
-          ...prev,
-          score: prev.score + linesCleared * 100,
-        }));
+        setGameState((prev) => ({ ...prev, score: prev.score + linesCleared * 100 }));
       }
       gameData.currentPiece = null;
     }
-  }, [gameState.isPaused, collision, createPiece, mergePiece, checkLines]);
+  };
 
-  const handleKeyPress = useCallback(
-    (e: KeyboardEvent) => {
-      if (!gameState.gameStarted || gameState.isPaused) return;
+  const handleKeyPress = useCallback((e: KeyboardEvent) => {
+    if (!gameState.gameStarted || gameState.isPaused) return;
+    const gameData = gameDataRef.current;
+    if (!gameData.currentPiece) return;
 
-      const gameData = gameDataRef.current;
-      if (!gameData.currentPiece) return;
+    let newPiece = { ...gameData.currentPiece };
 
-      const piece = gameData.currentPiece;
-      let newPiece = { ...piece };
-
-      switch (e.key.toLowerCase()) {
-        case "a":
-          newPiece.x--;
-          break;
-        case "d":
-          newPiece.x++;
-          break;
-        case "s":
-          while (
-            !collision({ ...newPiece, y: newPiece.y + 1 }, gameData.board)
-          ) {
-            newPiece.y++;
-          }
-          break;
-        case "shift": {
-          const rotated = piece.shape[0].map((_, i) =>
-            piece.shape.map((row) => row[i]).reverse()
-          );
-          newPiece = { ...piece, shape: rotated };
-          break;
+    switch (e.key.toLowerCase()) {
+      case "a": newPiece.x--; break;
+      case "d": newPiece.x++; break;
+      case "s":
+        while (!collision({ ...newPiece, y: newPiece.y + 1 }, gameData.board)) {
+          newPiece.y++;
         }
-      }
+        break;
+      case "shift":
+        newPiece.shape = newPiece.shape[0].map((_, i) =>
+          newPiece.shape.map((row) => row[i]).reverse()
+        );
+        break;
+    }
 
-      if (!collision(newPiece, gameData.board)) {
-        gameData.currentPiece = newPiece;
-      }
-    },
-    [collision, gameState.gameStarted, gameState.isPaused]
-  );
+    if (!collision(newPiece, gameData.board)) {
+      gameData.currentPiece = newPiece;
+    }
+  }, [collision, gameState.gameStarted, gameState.isPaused]);
 
   useEffect(() => {
-    const gameLoop = setInterval(() => {
-      update();
+    const updateInterval = setInterval(update, UPDATE_INTERVAL);
+    let animationFrameId: number;
+    const render = () => {
       draw();
-    }, UPDATE_INTERVAL);
+      animationFrameId = requestAnimationFrame(render);
+    };
+    render();
 
     window.addEventListener("keydown", handleKeyPress);
-
     return () => {
-      clearInterval(gameLoop);
+      clearInterval(updateInterval);
+      cancelAnimationFrame(animationFrameId);
       window.removeEventListener("keydown", handleKeyPress);
     };
-  }, [update, draw, handleKeyPress]);
+  }, [handleKeyPress]);
 
   const startGame = () => {
     gameDataRef.current = {
-      board: Array.from({ length: BOARD_HEIGHT }, () =>
-        Array(BOARD_WIDTH).fill(0)
-      ),
-      colors: Array.from({ length: BOARD_HEIGHT }, () =>
-        Array(BOARD_WIDTH).fill("")
-      ),
+      board: Array.from({ length: BOARD_HEIGHT }, () => Array(BOARD_WIDTH).fill(0)),
+      colors: Array.from({ length: BOARD_HEIGHT }, () => Array(BOARD_WIDTH).fill("")),
       currentPiece: createPiece(),
     };
     setGameState({ isPaused: false, gameStarted: true, score: 0 });
@@ -262,25 +228,55 @@ const TetrisGame: React.FC = () => {
 
   return (
     <div className="flex flex-col items-center gap-4">
-      <div className="text-lg font-bold">Score: {gameState.score}</div>
-      <canvas
-        ref={canvasRef}
-        width={BLOCK_SIZE * BOARD_WIDTH}
-        height={BLOCK_SIZE * BOARD_HEIGHT}
-        className="border border-white"
-      />
-      <div>
-        <button onClick={startGame} className=" text-white px-4 py-2 rounded">
-          {gameState.gameStarted ? "Restart" : "Start"}
-        </button>
-        <button
-          onClick={() =>
-            setGameState((prev) => ({ ...prev, isPaused: !prev.isPaused }))
-          }
-          disabled={!gameState.gameStarted}
-        >
-          {gameState.isPaused ? "Resume" : "Pause"}
-        </button>
+      <div className="text-lg font-bold text-white mt-2">Score: {gameState.score}</div>
+        <div className="relative group">
+          <canvas
+            ref={canvasRef}
+            width={BLOCK_SIZE * BOARD_WIDTH}
+            height={BLOCK_SIZE * BOARD_HEIGHT}
+            className="border border-white z-0"
+          />
+
+          {!gameState.gameStarted && (
+            <div className="absolute inset-0 z-10 flex flex-col items-center justify-center text-center bg-black bg-opacity-50 px-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <p className="text-white text-md mb-4">
+                <strong>Controls:</strong><br />
+                A – Move Left<br />
+                D – Move Right<br />
+                S – Hard Drop<br />
+                Shift – Rotate
+              </p>
+            </div>
+          )}
+        </div>
+
+      <div className="flex flex-col items-center gap-2 w-[300px]">
+        {!gameState.gameStarted ? (
+          <button
+            onClick={startGame}
+            className="w-full text-white font-bold px-4 py-2 rounded"
+          >
+            Start Game
+          </button>
+        ) : (
+          <div className="flex w-full gap-2">
+            <button
+              onClick={startGame}
+              className="w-1/2 text-white font-bold px-4 py-2 rounded"
+            >
+              Restart
+            </button>
+            <button
+              onClick={() =>
+                setGameState((prev) => ({ ...prev, isPaused: !prev.isPaused }))
+              }
+              disabled={!gameState.gameStarted}
+              className="w-1/2 text-white font-bold px-4 py-2 rounded"
+            >
+              {gameState.isPaused ? "Resume" : "Pause"}
+            </button>
+          </div>
+        )}
       </div>
     </div>
   );

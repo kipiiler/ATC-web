@@ -1,58 +1,49 @@
 const ContactSection = () => {
   return (
-    <div className="flex justify-center mt-20 mp-40">
-      <div className="container">
-        <div className="grid grid-cols-5">
-          <div className="col-span-2 h-full">
-            <div className="flex-col pl-20 h-full items-center">
-              <div className="text-5xl" style={{ fontFamily: "Orbitron" }}>
+    <div className="relative flex justify-center py-24 bg-gradient-to-br from-[#2F1947] to-[#735D78] text-white overflow-hidden">
+      
+      {/* ✨ Bottom-left ambient orb */}
+      <div className="absolute bottom-[-200px] left-[-200px] w-[600px] h-[600px] bg-[#BC9D5D] rounded-full opacity-10 blur-3xl animate-pulse-slow pointer-events-none z-0" />
+
+      <div className="container z-10 px-6 md:px-20">
+        <div className="grid grid-cols-1 md:grid-cols-5 items-center">
+          <div className="md:col-span-2 mb-12 md:mb-0">
+            <div className="pl-2 md:pl-8">
+              <h2 className="text-4xl md:text-5xl font-['Orbitron'] border-b-4 border-[#BC9D5D] inline-block pb-1">
                 GET IN TOUCH
-              </div>
+              </h2>
             </div>
           </div>
-          <div className="col-span-3 flex w-full justify-end">
-            <div className="px-40 py-20">
-              <div className="text-2xl my-2">
-                <a href="mailto:atc@uw.edu">EMAIL</a>
-              </div>
-              <div className="text-2xl my-2">
-                <a href="https://www.instagram.com/atc.uw/">
-                  {"instagram".toUpperCase()}
+
+          <div className="md:col-span-3 flex justify-start md:justify-end">
+            <div className="space-y-4 text-xl md:text-2xl">
+              <div>
+                <a
+                  href="mailto:atc@uw.edu"
+                  className="hover:text-[#BC9D5D] transition-colors"
+                >
+                  EMAIL
                 </a>
               </div>
-              <div className="text-2xl my-2">
-                {" "}
-                <a href="https://www.linkedin.com/company/algorithmic-trading-club-at-uw/">{"Linkedin".toUpperCase()}</a>
+              <div>
+                <a
+                  href="https://www.instagram.com/atc.uw/"
+                  className="hover:text-[#BC9D5D] transition-colors"
+                  target="_blank"
+                >
+                  INSTAGRAM
+                </a>
+              </div>
+              <div>
+                <a
+                  href="https://www.linkedin.com/company/algorithmic-trading-club-at-uw/"
+                  className="hover:text-[#BC9D5D] transition-colors"
+                  target="_blank"
+                >
+                  LINKEDIN
+                </a>
               </div>
             </div>
-            {" "}
-            {/* Modified */}
-            {/* <div className="border-2 border-amber-200 px-40 py-20">
-              <div className="w-full my-10 text-3xl">JOIN OUR NEWSLETTER</div>
-              <div className="w-3/5">
-                <div className="border-b border-white py-2 w-96">
-                  <input
-                    className="appearance-none bg-transparent border-none w-full mr-3 py-1 px-2 leading-tight focus:outline-none"
-                    type="text"
-                    placeholder="NAME"
-                    aria-label="Full name"
-                  />
-                </div>
-                <div className="border-b border-white py-2  w-96">
-                  <input
-                    className="appearance-none bg-transparent border-none w-full mr-3 py-1 px-2 leading-tight focus:outline-none"
-                    type="text"
-                    placeholder="EMAIL ADDRESS"
-                    aria-label="Full name"
-                  />
-                </div>
-                <div className="w-96 flex justify-end">
-                  <button className="text-white border-white border text-1xl py-2 px-4 rounded-2xl mt-10">
-                    SIGN UP
-                  </button>
-                </div>
-              </div>
-            </div> */}
           </div>
         </div>
       </div>

@@ -6,7 +6,7 @@ import SponsorsSection from "../component/SponsorsSection";
 
 const Home = () => {
   return (
-    <div>
+    <div className="min-h-screen bg-gradient-to-br from-[#2F1947] to-[#735D78] text-white">
       <HeroSection />
       <NewsSection />
       <AboutSection />
