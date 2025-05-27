@@ -3,6 +3,7 @@ import ContactSection from "../component/ContactSection";
 import HeroSection from "../component/HeroSection";
 import NewsSection from "../component/NewsSection";
 import SponsorsSection from "../component/SponsorsSection";
+import './Home.css';
 
 const FuturisticDivider = () => (
   <div className="w-[70%] mx-auto my-10 md:my-14 h-[1.5px] bg-gradient-to-r from-transparent via-[#BC9D5D]/60 to-transparent shadow-[0_0_10px_#BC9D5D] animate-pulse-slow" />
@@ -10,8 +11,11 @@ const FuturisticDivider = () => (
 
 const Home = () => {
   return (
-    <div className="relative min-h-screen bg-[#3B2C4F] text-white overflow-hidden">
+    <div className="relative min-h-screen bg-[radial-gradient(ellipse_at_60%_60%,_#3B2C4F_0%,_#5D3F6A_40%,_#8F75AA_75%,_#3B2C4F_100%)] text-white overflow-hidden">
 
+      <div className="absolute inset-0 z-0 group">
+        <div className="absolute inset-0 animated-grid group-hover:warped-grid pointer-events-none" />
+      </div>
 
       <div className="absolute -top-60 -left-60 w-[900px] h-[900px] bg-[#BC9D5D] rounded-full opacity-20 blur-[200px] animate-pulse-slow pointer-events-none z-0" />
       <div className="absolute bottom-[-300px] right-[-300px] w-[1000px] h-[1000px] bg-[#BC9D5D] opacity-15 rounded-full blur-[220px] animate-pulse-slow pointer-events-none z-0" />
