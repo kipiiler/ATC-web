@@ -5,7 +5,7 @@ const DefaultFooter = () => {
         <div className="mb-2 lg:mb-0 text-center lg:text-left">
           University of Washington, Seattle, WA, 98195
         </div>
-        <div className="text-center lg:text-right text-gray-500">
+        <div className="text-center lg:text-right">
           ©2025 Algorithmic Trading Club @ UW. All rights reserved.
         </div>
       </div>

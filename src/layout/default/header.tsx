@@ -39,7 +39,7 @@ const DefaultHeader = () => {
             alt="Logo Icon"
             className="h-16 w-auto object-contain"
           />
-          <div className="font-['Judson'] font-bold text-5xl text-[#2F1947]">
+          <div className="font-['Rajdhani'] font-bold text-4xl text-[#2F1947]">
             ATC@UW
           </div>
         </div>

@@ -37,13 +37,26 @@ const AboutSection = () => {
           ].map((text, idx) => (
             <div
               key={idx}
-              className="bg-white/5 backdrop-blur-md border border-[#FFFFFF]/30 rounded-xl p-6 md:p-10 text-2xl md:text-3xl text-white min-h-[200px] md:min-h-[320px] flex items-center justify-center text-center shadow-md"
-              style={{
-                fontFamily: "Orbitron",
-                textShadow: "0 0 4px #BC9D5D55",
-              }}
+              className="relative overflow-hidden rounded-xl min-h-[200px] md:min-h-[320px] shadow-md flex items-center justify-center text-center"
             >
-              {text}
+              {/* Frosted radial edge background with clear center */}
+              <div
+                className="absolute inset-0 rounded-xl border border-white/20 backdrop-blur-[10px] bg-white/10 pointer-events-none z-0"
+                style={{
+                  maskImage: 'radial-gradient(circle at center, transparent 0%, rgba(0,0,0,0.6) 60%, black 100%)',
+                  WebkitMaskImage: 'radial-gradient(circle at center, transparent 0%, rgba(0,0,0,0.6) 60%, black 100%)',
+                }}
+              />
+
+              {/* Centered text content */}
+              <div
+                className="relative z-10 px-4 md:px-6 text-2xl md:text-3xl text-white font-['Orbitron']"
+                style={{
+                  textShadow: "0 0 4px #BC9D5D55",
+                }}
+              >
+                {text}
+              </div>
             </div>
           ))}
         </div>

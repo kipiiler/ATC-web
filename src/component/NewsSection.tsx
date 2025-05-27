@@ -122,35 +122,53 @@ const NewsSection = () => {
     if (!text) return text;
     const markdownLinkRegex = /\[([^\]]+)\]\(([^)]+)\)/g;
     const htmlText = text.replace(markdownLinkRegex, (_: any, linkText: string, url: string) => {
-      return `<a href="${url}" class="text-[#BC9D5D] hover:text-yellow-300 hover:underline transition-colors" target="_blank" rel="noopener noreferrer">${linkText}</a>`;
+      return `<a href="${url}" class="text-[#BC9D5D] transition-colors" target="_blank" rel="noopener noreferrer">${linkText}</a>`;
     });
     return htmlText === text ? text : <span dangerouslySetInnerHTML={{ __html: htmlText }} />;
   };
 
   const CompactNewsItem = ({ item }: any) => (
-    <div className="bg-white/10 border border-white/10 backdrop-blur-md rounded-md py-3 px-4 my-2 hover:bg-white/20 transition-all flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
-      <div className="flex items-center gap-3">
-        <span className={`text-xs text-gray-900 py-1 px-2 font-bold rounded-sm ${item.category === "Workshop" ? "bg-pink-500" : ""}${item.category === "Event" ? "bg-blue-500" : ""}${item.category === "Competition" ? "bg-lime-500" : ""}${item.category === "Research" ? "bg-purple-500" : ""}${item.category === "Opportunity" ? "bg-amber-500" : ""}${item.category === "Announcement" ? "bg-cyan-500" : ""}${item.category === "Career" ? "bg-emerald-500" : ""}`}>{item.category}</span>
-        <h3 className="text-sm font-medium text-white">{parseMarkdownLinks(item.title)}</h3>
-      </div>
-      <div className="flex items-center justify-between sm:justify-end gap-4">
+    <div className="relative my-2 rounded-md overflow-hidden shadow-md">
+      <div
+        className="absolute inset-0 rounded-md border border-white/20 backdrop-blur-[10px] bg-white/10 pointer-events-none z-0"
+        style={{
+          maskImage: 'radial-gradient(circle at center, transparent 35%, black 100%)',
+          WebkitMaskImage: 'radial-gradient(circle at center, transparent 35%, black 100%)'
+        }}
+      />
+      
+      <div className="relative z-10 p-4 transition-all flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+        <div className="flex items-center gap-3">
+          <span className={`text-xs text-gray-900 py-1 px-2 font-bold rounded-sm ${item.category === "Workshop" ? "bg-pink-500" : ""}${item.category === "Event" ? "bg-blue-500" : ""}${item.category === "Competition" ? "bg-lime-500" : ""}${item.category === "Research" ? "bg-purple-500" : ""}${item.category === "Opportunity" ? "bg-amber-500" : ""}${item.category === "Announcement" ? "bg-cyan-500" : ""}${item.category === "Career" ? "bg-emerald-500" : ""}`}>{item.category}</span>
+          <h3 className="text-sm font-medium text-white">{parseMarkdownLinks(item.title)}</h3>
+        </div>
         <span className="text-gray-300 text-xs">{item.date}</span>
       </div>
     </div>
   );
 
   const DetailedNewsItem = ({ item }: any) => (
-    <div className="bg-white/10 border border-white/10 backdrop-blur-md rounded-md p-5 my-4 hover:bg-white/20 transition-all">
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-2">
-        <div className="flex items-center gap-3 mb-1 sm:mb-0">
-          <span className={`text-xs text-gray-900 py-1 px-2 font-bold rounded-sm ${item.category === "Workshop" ? "bg-pink-500" : ""}${item.category === "Event" ? "bg-blue-500" : ""}${item.category === "Competition" ? "bg-lime-500" : ""}${item.category === "Research" ? "bg-purple-500" : ""}${item.category === "Opportunity" ? "bg-amber-500" : ""}${item.category === "Announcement" ? "bg-cyan-500" : ""}${item.category === "Career" ? "bg-emerald-500" : ""}`}>{item.category}</span>
-          <span className="text-gray-300 text-xs">{item.date}</span>
+    <div className="relative my-4 rounded-md overflow-hidden shadow-md">
+      <div
+        className="absolute inset-0 rounded-md border border-white/20 backdrop-blur-[10px] bg-white/10 pointer-events-none z-0"
+        style={{
+          maskImage: 'radial-gradient(circle at center, transparent 35%, black 100%)',
+          WebkitMaskImage: 'radial-gradient(circle at center, transparent 35%, black 100%)'
+        }}
+      />
+      
+      <div className="relative z-10 p-5 transition-all">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-2">
+          <div className="flex items-center gap-3 mb-1 sm:mb-0">
+            <span className={`text-xs text-gray-900 py-1 px-2 font-bold rounded-sm ${item.category === "Workshop" ? "bg-pink-500" : ""}${item.category === "Event" ? "bg-blue-500" : ""}${item.category === "Competition" ? "bg-lime-500" : ""}${item.category === "Research" ? "bg-purple-500" : ""}${item.category === "Opportunity" ? "bg-amber-500" : ""}${item.category === "Announcement" ? "bg-cyan-500" : ""}${item.category === "Career" ? "bg-emerald-500" : ""}`}>{item.category}</span>
+            <span className="text-gray-300 text-xs">{item.date}</span>
+          </div>
         </div>
+        <h3 className="text-base font-['Orbitron'] text-white mb-1">{parseMarkdownLinks(item.title)}</h3>
+        {item.hasDetails && item.description && (
+          <p className="text-gray-300 text-sm">{item.description}</p>
+        )}
       </div>
-      <h3 className="text-base font-['Orbitron'] text-white mb-1">{parseMarkdownLinks(item.title)}</h3>
-      {item.hasDetails && item.description && (
-        <p className="text-gray-300 text-sm">{item.description}</p>
-      )}
     </div>
   );
 
@@ -178,7 +196,7 @@ const NewsSection = () => {
             ))}
           </div>
           <div className="flex justify-center py-6">
-            <button onClick={toggleShowAll} className="text-[#BC9D5D] hover:text-yellow-300 text-sm flex items-center group">
+            <button onClick={toggleShowAll} className="text-[#BC9D5D] text-sm flex items-center group">
               {showAllNews ? "SHOW LESS" : "VIEW ALL NEWS"}
               <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={showAllNews ? "M5 15l7-7 7 7" : "M19 9l-7 7-7-7"} />

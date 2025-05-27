@@ -227,14 +227,14 @@ const TetrisGame: React.FC = () => {
   };
 
   return (
-    <div className="flex flex-col items-center gap-4">
-      <div className="text-lg font-bold text-white mt-2">Score: {gameState.score}</div>
+    <div className="flex flex-col items-center gap-4 ">
+      <div className="text-lg font-bold text-white mt-2 ">Score: {gameState.score}</div>
         <div className="relative group">
           <canvas
             ref={canvasRef}
             width={BLOCK_SIZE * BOARD_WIDTH}
             height={BLOCK_SIZE * BOARD_HEIGHT}
-            className="border border-white z-0"
+            className="border border-white shadow-md z-0"
           />
 
           {!gameState.gameStarted && (
@@ -250,7 +250,7 @@ const TetrisGame: React.FC = () => {
           )}
         </div>
 
-      <div className="flex flex-col items-center gap-2 w-[300px]">
+      <div className="flex flex-col items-center gap-2 w-[300px] ">
         {!gameState.gameStarted ? (
           <button
             onClick={startGame}
