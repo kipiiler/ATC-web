@@ -20,7 +20,6 @@ const Directory = () => {
         <div className="absolute top-[45%] left-[70%] w-[300px] h-[300px] bg-[#6A4F7B] opacity-18 blur-[800px] rounded-full" />
       </div>
 
-      {/* Content */}
       <div className="relative z-10 mt-0">
         <MemoizedExecutiveSection />
         <MemoizedMembersSection />

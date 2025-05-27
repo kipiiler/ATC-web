@@ -1,14 +1,12 @@
 const ContactSection = () => {
   return (
-    <div className="relative flex justify-center py-24 bg-gradient-to-br from-[#2F1947] to-[#735D78] text-white overflow-hidden">
-      
-      {/* ✨ Bottom-left ambient orb */}
-      <div className="absolute bottom-[-200px] left-[-200px] w-[600px] h-[600px] bg-[#BC9D5D] rounded-full opacity-10 blur-3xl animate-pulse-slow pointer-events-none z-0" />
-
+    <div className="relative flex justify-center py-24 text-white overflow-hidden">
+    
       <div className="container z-10 px-6 md:px-20">
         <div className="grid grid-cols-1 md:grid-cols-5 items-center">
           <div className="md:col-span-2 mb-12 md:mb-0">
             <div className="pl-2 md:pl-8">
+              <div className="text-xl md:text-2xl text-[#BC9D5D] mb-2">_CONTACT</div>
               <h2 className="text-4xl md:text-5xl font-['Orbitron'] border-b-4 border-[#BC9D5D] inline-block pb-1">
                 GET IN TOUCH
               </h2>
