@@ -87,7 +87,7 @@ const MembersSection = () => {
     <section className="flex justify-center pt-20 md:pt-40 px-4 md:px-0">
       <div className="container">
         <header className="w-full mb-10 md:mb-20">
-          <h1 className="text-3xl md:text-5xl font-bold font-['Orbitron']">
+          <h1 className="text-3xl md:text-5xl font-bold font-['Orbitron'] text-white border-b-4 border-[#BC9D5D] inline-block pb-1">
             ALUMNI
           </h1>
         </header>

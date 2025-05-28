@@ -87,9 +87,11 @@ const ExecutiveSection = () => {
     <section className="flex justify-center pt-20 md:pt-40 px-4 md:px-0">
       <div className="container">
         <header className="w-full mb-10 md:mb-20">
-          <h2 className="text-xl md:text-2xl mb-2">_MEET THE TEAM</h2>
-          <h1 className="text-3xl md:text-5xl font-bold font-['Orbitron']">
-            THE EXECUTIVE OF ATC
+          <h2 className="text-xl md:text-2xl mb-2 text-[#BC9D5D] font-semibold tracking-wide">
+            _MEET THE TEAM
+          </h2>
+          <h1 className="text-3xl md:text-5xl font-bold font-['Orbitron'] text-white border-b-4 border-[#BC9D5D] inline-block pb-1">
+            THE EXECUTIVES OF ATC
           </h1>
         </header>
 

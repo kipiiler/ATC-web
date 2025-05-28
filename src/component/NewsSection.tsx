@@ -1,7 +1,6 @@
 import { useState } from "react";
 
 const NewsSection = () => {
-  // Sample news data - replace with your actual news items
   const allNewsItems = [
     {
       id: 100,
@@ -21,15 +20,15 @@ const NewsSection = () => {
       hasDetails: true,
       link: ""
     },
-    {
-      id: 31,
-      title: "[Huskyholdem](https://huskyholdem.atcuw.org/) is offcially launched!",
-      date: "April 2025",
-      description: "Huskyholdem is a poker bot game designed for students at the University of Washington by our club. It is a fun and engaging way to learn about poker strategy and pratice your programming skills.",
-      category: "Event",
-      hasDetails: true,
-      link: ""
-    },
+    // {
+    //   id: 31,
+    //   title: "[Huskyholdem](https://huskyholdem.atcuw.org/) is offcially launched!",
+    //   date: "April 2025",
+    //   description: "Huskyholdem is a poker bot game designed for students at the University of Washington by our club. It is a fun and engaging way to learn about poker strategy and pratice your programming skills.",
+    //   category: "Event",
+    //   hasDetails: true,
+    //   link: ""
+    // },
     {
       id: 12,
       title: "Congrats to [Ishan Sinha](https://www.linkedin.com/in/ishan-sinha-7b74b51aa/) and [Ishan Gupta](https://www.linkedin.com/in/ishangu/) on participating in [DE Shaw Connect Program](https://www.linkedin.com/company/d.-e.-shaw-&-co./)!",
@@ -37,6 +36,15 @@ const NewsSection = () => {
       description: "",
       category: "Career",
       hasDetails: false,
+      link: ""
+    },
+    {
+      id: 13,
+      title: "Congrats to [Jack Li](https://www.linkedin.com/in/jack-li-890a0623b/) on participating in [DE Shaw Nexus Fellowship](https://fellowships.deshaw.com/)!",
+      date: "March 2025",
+      description: "In the DE Shaw Nexus Fellowship, Jack worked with top undergraduates from around the U.S. in learning about quantitative finance. During that time, he listened to lectures from DE Shaw employees, professors, and industry professionals on finance and market behavior, and learned about day-to-day operations at the quant firm.",
+      category: "Career",
+      hasDetails: true,
       link: ""
     },
     {
@@ -103,161 +111,92 @@ const NewsSection = () => {
       link: ""
     },
   ];
-
   const [showAllNews, setShowAllNews] = useState(false);
-  const [viewMode, setViewMode] = useState("detailed"); // "compact" or "detailed"
-  
+  const [viewMode, setViewMode] = useState("detailed");
+
   const displayedNews = showAllNews ? allNewsItems : allNewsItems.slice(0, 6);
+  const toggleShowAll = () => setShowAllNews(!showAllNews);
+  const toggleViewMode = () => setViewMode(viewMode === "compact" ? "detailed" : "compact");
 
-  const toggleShowAll = () => {
-    setShowAllNews(!showAllNews);
-  };
-
-  const toggleViewMode = () => {
-    setViewMode(viewMode === "compact" ? "detailed" : "compact");
-  };
-
-  // Function to convert markdown links to HTML
   const parseMarkdownLinks = (text: string) => {
     if (!text) return text;
-    
-    // Regular expression to match markdown links: [text](url)
     const markdownLinkRegex = /\[([^\]]+)\]\(([^)]+)\)/g;
-    
-    // Process the text and replace markdown links with HTML links
     const htmlText = text.replace(markdownLinkRegex, (_: any, linkText: string, url: string) => {
-      return `<a href="${url}" class="text-blue-400 hover:text-pink-400 hover:underline transition-colors" target="_blank" rel="noopener noreferrer">${linkText}</a>`;
+      return `<a href="${url}" class="text-[#BC9D5D] transition-colors" target="_blank" rel="noopener noreferrer">${linkText}</a>`;
     });
-    
-    // If there were no changes, return the original text
-    if (htmlText === text) {
-      return text;
-    }
-    
-    // If there were changes, we need to return a React element with dangerouslySetInnerHTML
-    return <span dangerouslySetInnerHTML={{ __html: htmlText }} />;
+    return htmlText === text ? text : <span dangerouslySetInnerHTML={{ __html: htmlText }} />;
   };
 
-  // Compact news item component
   const CompactNewsItem = ({ item }: any) => (
-    <div 
-      className="border-b border-gray-700 py-3 px-2 hover:bg-gray-800/30 transition-all flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2"
-    >
-      <div className="flex items-center gap-3">
-        <span className={`
-          text-xs text-gray-900 py-1 px-2 font-bold rounded-sm
-          ${item.category === "Workshop" ? "bg-pink-500" : ""}
-          ${item.category === "Event" ? "bg-blue-500" : ""}
-          ${item.category === "Competition" ? "bg-lime-500" : ""}
-          ${item.category === "Research" ? "bg-purple-500" : ""}
-          ${item.category === "Opportunity" ? "bg-amber-500" : ""}
-          ${item.category === "Announcement" ? "bg-cyan-500" : ""}
-          ${item.category === "Career" ? "bg-emerald-500" : ""}
-        `}>
-          {item.category}
-        </span>
-        <h3 className="text-sm font-medium">{parseMarkdownLinks(item.title)}</h3>
-      </div>
-      <div className="flex items-center justify-between sm:justify-end gap-4">
-        <span className="text-gray-400 text-xs">{item.date}</span>
-        {item.link != "" && (
-          <button className={`text-blue-400 hover:text-pink-400 text-xs flex items-center group`}>
-            <a href={item.link} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1">
-                Read more
-            </a>
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3 ml-1 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-            </svg>
-          </button>
-        )}
+    <div className="relative my-2 rounded-md overflow-hidden shadow-md">
+      <div
+        className="absolute inset-0 rounded-md border border-white/20 backdrop-blur-[10px] bg-white/10 pointer-events-none z-0"
+        style={{
+          maskImage: 'radial-gradient(circle at center, transparent 35%, black 100%)',
+          WebkitMaskImage: 'radial-gradient(circle at center, transparent 35%, black 100%)'
+        }}
+      />
+      
+      <div className="relative z-10 p-4 transition-all flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+        <div className="flex items-center gap-3">
+          <span className={`text-xs text-gray-900 py-1 px-2 font-bold rounded-sm ${item.category === "Workshop" ? "bg-pink-500" : ""}${item.category === "Event" ? "bg-blue-500" : ""}${item.category === "Competition" ? "bg-lime-500" : ""}${item.category === "Research" ? "bg-purple-500" : ""}${item.category === "Opportunity" ? "bg-amber-500" : ""}${item.category === "Announcement" ? "bg-cyan-500" : ""}${item.category === "Career" ? "bg-emerald-500" : ""}`}>{item.category}</span>
+          <h3 className="text-sm font-medium text-white">{parseMarkdownLinks(item.title)}</h3>
+        </div>
+        <span className="text-gray-300 text-xs">{item.date}</span>
       </div>
     </div>
   );
 
-  // Detailed news item component
   const DetailedNewsItem = ({ item }: any) => (
-    <div 
-      className="border-b border-gray-700 pb-5 hover:bg-gray-800/30 transition-all p-3"
-    >
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-2">
-        <div className="flex items-center gap-3 mb-1 sm:mb-0">
-          <span className={`
-            text-xs text-gray-900 py-1 px-2 font-bold rounded-sm
-            ${item.category === "Workshop" ? "bg-pink-500" : ""}
-            ${item.category === "Event" ? "bg-blue-500" : ""}
-            ${item.category === "Competition" ? "bg-lime-500" : ""}
-            ${item.category === "Research" ? "bg-purple-500" : ""}
-            ${item.category === "Opportunity" ? "bg-amber-500" : ""}
-            ${item.category === "Announcement" ? "bg-cyan-500" : ""}
-            ${item.category === "Career" ? "bg-emerald-500" : ""}
-          `}>
-            {item.category}
-          </span>
-          <span className="text-gray-400 text-xs">{item.date}</span>
+    <div className="relative my-4 rounded-md overflow-hidden shadow-md">
+      <div
+        className="absolute inset-0 rounded-md border border-white/20 backdrop-blur-[10px] bg-white/10 pointer-events-none z-0"
+        style={{
+          maskImage: 'radial-gradient(circle at center, transparent 35%, black 100%)',
+          WebkitMaskImage: 'radial-gradient(circle at center, transparent 35%, black 100%)'
+        }}
+      />
+      
+      <div className="relative z-10 p-5 transition-all">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-2">
+          <div className="flex items-center gap-3 mb-1 sm:mb-0">
+            <span className={`text-xs text-gray-900 py-1 px-2 font-bold rounded-sm ${item.category === "Workshop" ? "bg-pink-500" : ""}${item.category === "Event" ? "bg-blue-500" : ""}${item.category === "Competition" ? "bg-lime-500" : ""}${item.category === "Research" ? "bg-purple-500" : ""}${item.category === "Opportunity" ? "bg-amber-500" : ""}${item.category === "Announcement" ? "bg-cyan-500" : ""}${item.category === "Career" ? "bg-emerald-500" : ""}`}>{item.category}</span>
+            <span className="text-gray-300 text-xs">{item.date}</span>
+          </div>
         </div>
-        {item.link != "" && (
-          <button className={`text-blue-400 hover:text-pink-400 text-xs flex items-center group`}>
-            <a href={item.link} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1">
-                Read more
-            </a>
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3 ml-1 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-            </svg>
-          </button>
+        <h3 className="text-base font-['Orbitron'] text-white mb-1">{parseMarkdownLinks(item.title)}</h3>
+        {item.hasDetails && item.description && (
+          <p className="text-gray-300 text-sm">{item.description}</p>
         )}
       </div>
-      <h3 className="text-base font-['Orbitron'] mb-1">{parseMarkdownLinks(item.title)}</h3>
-      {item.hasDetails && item.description && (
-        <p className="text-gray-400 text-sm">{item.description}</p>
-      )}
     </div>
   );
 
   return (
-    <div className="bg-gray-900 flex justify-center py-16 md:py-24">
-      <div className="container px-4 md:px-20">
-        <div className="mb-8 md:mb-12">
-          <div className="text-xl md:text-2xl mb-2">_NEWS</div>
+    <div className="relative flex items-center w-full justify-center py-24 text-white overflow-hidden">
+      <div className="container px-4 md:px-20 z-10">
+        <div className="mb-12">
+          <div className="text-xl md:text-2xl text-[#BC9D5D] mb-2">_NEWS</div>
           <div className="flex flex-col md:flex-row md:items-end justify-between">
             <div>
-              <div className="text-3xl md:text-5xl font-['Orbitron'] mb-1">
-                LATEST UPDATES
-              </div>
-              <div className="text-3xl md:text-5xl font-['Orbitron']">
-                AND ANNOUNCEMENTS
-              </div>
+              <div className="text-3xl md:text-5xl font-['Orbitron'] mb-1">LATEST UPDATES</div>
+              <div className="text-3xl md:text-5xl font-['Orbitron'] border-b-4 border-[#BC9D5D] inline-block w-fit pb-1">AND ANNOUNCEMENTS</div>
             </div>
             <div className="flex gap-3 mt-4 md:mt-0">
-              <button 
-                onClick={toggleViewMode}
-                className={`px-3 py-1 text-xs border ${viewMode === "compact" ? 'border-blue-500 text-blue-500' : 'border-gray-600 text-gray-400'}`}
-              >
-                COMPACT
-              </button>
-              <button 
-                onClick={toggleViewMode}
-                className={`px-3 py-1 text-xs border ${viewMode === "detailed" ? 'border-blue-500 text-blue-500' : 'border-gray-600 text-gray-400'}`}
-              >
-                DETAILED
-              </button>
+              <button onClick={toggleViewMode} className={`px-3 py-1 text-xs border ${viewMode === "compact" ? 'border-yellow-400 text-yellow-400' : 'border-white/30 text-white/60'}`}>COMPACT</button>
+              <button onClick={toggleViewMode} className={`px-3 py-1 text-xs border ${viewMode === "detailed" ? 'border-yellow-400 text-yellow-400' : 'border-white/30 text-white/60'}`}>DETAILED</button>
             </div>
           </div>
         </div>
 
-        <div className="border-gray-700 rounded">
+        <div className="rounded-xl">
           <div className="flex flex-col">
             {displayedNews.map((item) => (
-              viewMode === "compact" ? 
-                <CompactNewsItem key={item.id} item={item} /> : 
-                <DetailedNewsItem key={item.id} item={item} />
+              viewMode === "compact" ? <CompactNewsItem key={item.id} item={item} /> : <DetailedNewsItem key={item.id} item={item} />
             ))}
           </div>
-          
-          <div className="flex justify-center py-4 border-t border-gray-700">
-            <button 
-              onClick={toggleShowAll}
-              className="text-blue-400 hover:text-pink-400 text-sm flex items-center group"
-            >
+          <div className="flex justify-center py-6">
+            <button onClick={toggleShowAll} className="text-[#BC9D5D] text-sm flex items-center group">
               {showAllNews ? "SHOW LESS" : "VIEW ALL NEWS"}
               <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={showAllNews ? "M5 15l7-7 7 7" : "M19 9l-7 7-7-7"} />
