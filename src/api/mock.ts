@@ -7,6 +7,7 @@ import hn from "../assets/images/ho.webp";
 import jh from "../assets/images/josh.webp";
 import ga from "../assets/images/ga.webp";
 import fc from "../assets/images/franco.webp";
+import jpl from "../assets/images/jpl.webp";
 
 
 const getPosts = async () => {
@@ -139,31 +140,27 @@ const getExecutiveSummary = async () => {
   return {
     data: {
       0: {
-        name: "BHAVESH KUMAR",
-        title: "Managing Director",
-        imageUrl: c3,
+        name: "Jack Li",
+        title: "President",
+        imageUrl: jpl,
       },
       1: {
         name: "Ishan Sinha",
         title: "Vice President",
         imageUrl: iss,
       },
-      2: { name: "Jasper Blume", title: "Vice President", imageUrl: jb },
-      6: {
-        name: "Hoang Nguyen",
-        title: "Vice President",
-        imageUrl: hn,
-      },
-      7: {
-        name: "Joshua Hughes-Kuruganti",
-        title: "Vice President",
-        imageUrl: jh,
-      },
-      8: {
+      2: {
         name: "Gaurang Pendharkar",
         title: "Vice President",
         imageUrl: ga,
       },
+      3: { name: "Jasper Blume", title: "Vice President", imageUrl: jb },
+      4: {
+        name: "Joshua Hughes-Kuruganti",
+        title: "Vice President",
+        imageUrl: jh,
+      },
+      
     },
   };
 };
@@ -175,6 +172,16 @@ const getMembers = async () => {
         name: "Franco Carlos",
         title: "Managing Director 2023-2024",
         imageUrl: fc,
+      },
+      1: {
+        name: "BHAVESH KUMAR",
+        title: "Managing Director 2024-2025",
+        imageUrl: c3,
+      },
+      2: {
+        name: "Hoang Nguyen",
+        title: "Vice President 2024-2025",
+        imageUrl: hn,
       },
     },
   }
