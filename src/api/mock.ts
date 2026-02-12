@@ -8,7 +8,8 @@ import jh from "../assets/images/josh.webp";
 import ga from "../assets/images/ga.webp";
 import fc from "../assets/images/franco.webp";
 import jpl from "../assets/images/jpl.webp";
-
+import bm from "../assets/images/bm.webp";
+// import dd from "../assets/images/dd.webp";
 
 const getPosts = async () => {
   return [
@@ -154,8 +155,18 @@ const getExecutiveSummary = async () => {
         title: "Vice President",
         imageUrl: ga,
       },
-      3: { name: "Jasper Blume", title: "Vice President", imageUrl: jb },
-      4: {
+      3: {
+        name: "Bhaumik Mehta",
+        title: "VP of Curriculum",
+        imageUrl: bm,
+      },
+      // 4: {
+      //   name: "Daniel Domingos",
+      //   title: "VP of Software Engineering",
+      //   imageUrl: dd,
+      // },
+      5: { name: "Jasper Blume", title: "Vice President", imageUrl: jb },
+      6: {
         name: "Joshua Hughes-Kuruganti",
         title: "Vice President",
         imageUrl: jh,
