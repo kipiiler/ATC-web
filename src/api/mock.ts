@@ -9,7 +9,8 @@ import ga from "../assets/images/ga.webp";
 import fc from "../assets/images/franco.webp";
 import jpl from "../assets/images/jpl.webp";
 import bm from "../assets/images/bm.webp";
-// import dd from "../assets/images/dd.webp";
+import dd from "../assets/images/dd.webp";
+import pd3 from "../assets/images/pd3.webp";
 
 const getPosts = async () => {
   return [
@@ -147,12 +148,12 @@ const getExecutiveSummary = async () => {
       },
       1: {
         name: "Ishan Sinha",
-        title: "Vice President",
+        title: "Managing Director",
         imageUrl: iss,
       },
       2: {
         name: "Gaurang Pendharkar",
-        title: "Vice President",
+        title: "Managing Director",
         imageUrl: ga,
       },
       3: {
@@ -160,15 +161,20 @@ const getExecutiveSummary = async () => {
         title: "VP of Curriculum",
         imageUrl: bm,
       },
-      // 4: {
-      //   name: "Daniel Domingos",
-      //   title: "VP of Software Engineering",
-      //   imageUrl: dd,
-      // },
-      5: { name: "Jasper Blume", title: "Vice President", imageUrl: jb },
-      6: {
+      4: {
+        name: "Daniel Domingos",
+        title: "VP of Competitions",
+        imageUrl: dd,
+      },
+      5: {
+        name: "Patricia Dao",
+        title: "VP of Sponsorships",
+        imageUrl: pd3,
+      },
+      6: { name: "Jasper Blume", title: "Managing Director", imageUrl: jb },
+      7: {
         name: "Joshua Hughes-Kuruganti",
-        title: "Vice President",
+        title: "Managing Director",
         imageUrl: jh,
       },
       
