@@ -11,6 +11,7 @@ import jpl from "../assets/images/jpl.webp";
 import bm from "../assets/images/bm.webp";
 import dd from "../assets/images/dd.webp";
 import pd3 from "../assets/images/pd3.webp";
+import sl from "../assets/images/sl.webp";
 
 const getPosts = async () => {
   return [
@@ -176,6 +177,11 @@ const getExecutiveSummary = async () => {
         name: "Joshua Hughes-Kuruganti",
         title: "Managing Director",
         imageUrl: jh,
+      },
+      8: {
+        name: "Saisha Lakkoju",
+        title: "VP of Husky Hold'Em",
+        imageUrl: sl,
       },
       
     },
