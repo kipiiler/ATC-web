@@ -1,0 +1,48 @@
+/* Styling for the Company Placements section */
+.company-placements {
+  padding: 2rem;
+  background-color: #f9f9f9;
+}
+
+.company-placements h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.placement-category {
+  margin-bottom: 2rem;
+}
+
+.placement-category h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.placement-category ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.placement-category li {
+  margin-bottom: 0.5rem;
+}
+
+.placement-category a {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: inherit;
+  text-decoration: none;
+}
+
+.placement-category a:hover {
+  text-decoration: underline;
+}
+
+.placement-category a img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}

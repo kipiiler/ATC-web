@@ -56,6 +56,12 @@ const DefaultHeader = () => {
           >
             DIRECTORY
           </Link>
+          <Link
+            to="/placements"
+            className="text-[#2F1947] hover:text-blue-400 transition-colors font-medium text-lg"
+          >
+            PLACEMENTS
+          </Link>
           {/* <Link 
             to="/" 
             className="text-[#2F1947] hover:text-gray-300 transition-colors font-medium text-lg cursor-not-allowed"
@@ -164,6 +170,13 @@ const DefaultHeader = () => {
             onClick={() => setIsMenuOpen(false)}
           >
             DIRECTORY
+          </Link>
+          <Link
+            to="/placements"
+            className="block py-2 text-[#2F1947] hover:text-blue-400 transition-colors font-medium"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            PLACEMENTS
           </Link>
           {/* <span className="block py-2 text-gray-400 cursor-not-allowed">
             RESEARCH

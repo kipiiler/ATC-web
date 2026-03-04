@@ -1,6 +1,6 @@
-import JaneStreetImage from "../assets/images/janeStreetLogo.png";
-import MorganStanleyImage from "../assets/images/morganStanleyLogo.png";
-import QuantConnectImage from "../assets/images/quantConnectLogo.png";
+import JaneStreetImage from "../assets/images/sponsors/janeStreetLogo.png";
+import MorganStanleyImage from "../assets/images/sponsors/morganStanleyLogo.png";
+import QuantConnectImage from "../assets/images/sponsors/quantConnectLogo.png";
 
 const SponsorsSection = () => {
   return (

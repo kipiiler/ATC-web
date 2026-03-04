@@ -6,6 +6,7 @@ import Blog from "./page/Blog";
 import DefaultLauyout from "./layout/default";
 import BlogPost from "./page/BlogDetail";
 import Directory from "./page/Directory";
+import CompanyPlacements from "./page/CompanyPlacements";
 
 function App() {
   const router = createBrowserRouter([
@@ -49,7 +50,15 @@ function App() {
           <Directory />
         </DefaultLauyout>
       ),
-    }
+    },
+    {
+      path: "/placements",
+      element: (
+        <DefaultLauyout>
+          <CompanyPlacements />
+        </DefaultLauyout>
+      ),
+    },
   ]);
 
   return (

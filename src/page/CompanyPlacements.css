@@ -1,0 +1,33 @@
+/* Styling for the Company Placements page */
+.company-placements {
+  padding: 2rem;
+  background-color: #f9f9f9;
+}
+
+.company-placements h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.company-placements section {
+  margin-bottom: 2rem;
+}
+
+.company-placements h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.images {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.images img {
+  width: 150px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}

@@ -1,17 +1,17 @@
 import blogHolderImage from "../assets/images/blog_hold.webp";
 
-import c3 from "../assets/images/bhav.webp";
-import jb from "../assets/images/jb.webp";
-import iss from "../assets/images/ish.webp";
-import hn from "../assets/images/ho.webp";
-import jh from "../assets/images/josh.webp";
-import ga from "../assets/images/ga.webp";
-import fc from "../assets/images/franco.webp";
-import jpl from "../assets/images/jpl.webp";
-import bm from "../assets/images/bm.webp";
-import dd from "../assets/images/dd.webp";
-import pd3 from "../assets/images/pd3.webp";
-import sl from "../assets/images/sl.webp";
+import c3 from "../assets/images/people/bhav.webp";
+import jb from "../assets/images/people/jb.webp";
+import iss from "../assets/images/people/ish.webp";
+import hn from "../assets/images/people/ho.webp";
+import jh from "../assets/images/people/josh.webp";
+import ga from "../assets/images/people/ga.webp";
+import fc from "../assets/images/people/franco.webp";
+import jpl from "../assets/images/people/jpl.webp";
+import bm from "../assets/images/people/bm.webp";
+import dd from "../assets/images/people/dd.webp";
+import pd3 from "../assets/images/people/pd3.webp";
+import sl from "../assets/images/people/sl.webp";
 
 const getPosts = async () => {
   return [
