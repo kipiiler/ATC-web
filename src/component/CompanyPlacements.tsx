@@ -1,5 +1,6 @@
 import './CompanyPlacements.css';
 import amazonLogo from "../assets/images/placements/amazon.png";
+import ai2Logo from "../assets/images/placements/ai2.svg";
 import axiomLogo from "../assets/images/placements/axiom.png";
 import citadelLogo from "../assets/images/placements/citadel.png";
 import databricksLogo from "../assets/images/placements/databricks.png";
@@ -42,8 +43,9 @@ const placementCategories = [
     companies: [
       { name: "OpenAI", url: "https://openai.com/", logo: openaiLogo },
       { name: "Perplexity", url: "https://www.perplexity.ai/", logo: perplexityLogo },
-      { name: "Haze Labs", url: "https://www.haizelabs.com/", logo: hazeLabsLogo },
+      { name: "Haize Labs", url: "https://www.haizelabs.com/", logo: hazeLabsLogo },
       { name: "Nous Research", url: "https://nousresearch.com/", logo: nousResearchLogo },
+      { name: "Allen Institute for AI (AI2)", url: "https://allenai.org/", logo: ai2Logo },
       { name: "Axiom", url: "https://www.axiomatic-ai.com/", logo: axiomLogo },
     ],
   },

@@ -1,6 +1,34 @@
 import JaneStreetImage from "../assets/images/sponsors/janeStreetLogo.png";
 import MorganStanleyImage from "../assets/images/sponsors/morganStanleyLogo.png";
 import QuantConnectImage from "../assets/images/sponsors/quantConnectLogo.png";
+import TheTradeDeskImage from "../assets/images/sponsors/theTradeDeskLogo.png";
+
+const sponsors = [
+  {
+    name: "Jane Street",
+    href: "https://www.janestreet.com/",
+    image: JaneStreetImage,
+    className: "h-20 object-contain filter invert hover:scale-105 transition-transform duration-300",
+  },
+  {
+    name: "Morgan Stanley",
+    href: "https://www.morganstanley.com/",
+    image: MorganStanleyImage,
+    className: "h-16 object-contain filter invert hover:scale-105 transition-transform duration-300",
+  },
+  {
+    name: "QuantConnect",
+    href: "https://www.quantconnect.com/",
+    image: QuantConnectImage,
+    className: "h-14 object-contain hover:scale-105 transition-transform duration-300",
+  },
+  {
+    name: "The Trade Desk",
+    href: "https://www.thetradedesk.com/",
+    image: TheTradeDeskImage,
+    className: "h-14 object-contain hover:scale-105 transition-transform duration-300",
+  },
+];
 
 const SponsorsSection = () => {
   return (
@@ -26,21 +54,28 @@ const SponsorsSection = () => {
         </p>
 
         <div className="flex justify-center flex-wrap gap-16 items-center">
-          <img
-            src={JaneStreetImage}
-            alt="Jane Street"
-            className="h-20 object-contain filter invert hover:scale-105 transition-transform duration-300"
-          />
-          <img
-            src={MorganStanleyImage}
-            alt="Morgan Stanley"
-            className="h-16 object-contain filter invert hover:scale-105 transition-transform duration-300"
-          />
-          <img
-            src={QuantConnectImage}
-            alt="QuantConnect"
-            className="h-14 object-contain hover:scale-105 transition-transform duration-300"
-          />
+          {sponsors.map((sponsor) => (
+            <a
+              key={sponsor.name}
+              href={sponsor.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:scale-105 transition-transform duration-300"
+              aria-label={sponsor.name}
+            >
+              {sponsor.image ? (
+                <img
+                  src={sponsor.image}
+                  alt={sponsor.name}
+                  className={sponsor.className}
+                />
+              ) : (
+                <div className="border border-[#BC9D5D] px-5 py-3 font-['Orbitron'] text-lg text-[#F5E7C2]">
+                  {sponsor.name}
+                </div>
+              )}
+            </a>
+          ))}
         </div>
       </div>
     </div>
