@@ -83,7 +83,7 @@ const DefaultHeader = () => {
         </div>
         
         <a 
-          href="https://forms.gle/Vo1zRUPN4f5x3xc5A" 
+          href="https://forms.gle/7BZoRUbs7SJaAwpe9" 
           target="_blank" 
           rel="noopener noreferrer"
           className="border-2 border-[#BC9D5D] hover:border-blue-400 hover:text-blue-400 text-[#BC9D5D] transition-colors py-2 px-6 font-['Orbitron'] font-medium"
@@ -193,7 +193,7 @@ const DefaultHeader = () => {
           </Link>
           <div className="pt-4 border-t border-gray-300">
             <a
-              href="https://forms.gle/8q9HuCxqLMCAFeo26"
+              href="https://forms.gle/7BZoRUbs7SJaAwpe9"
               target="_blank"
               rel="noopener noreferrer"
               className="block w-full text-center border-2 border-[#BC9D5D] hover:border-blue-400 hover:text-blue-400 text-[#BC9D5D] font-['Orbitron'] font-medium py-2 rounded-sm transition-colors"
