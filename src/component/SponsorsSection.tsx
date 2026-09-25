@@ -1,4 +1,5 @@
 import JaneStreetImage from "../assets/images/sponsors/janeStreetLogo.png";
+import CitadelImage from "../assets/images/sponsors/citadelLogo.svg";
 import MorganStanleyImage from "../assets/images/sponsors/morganStanleyLogo.png";
 import QuantConnectImage from "../assets/images/sponsors/quantConnectLogo.png";
 import TheTradeDeskImage from "../assets/images/sponsors/theTradeDeskLogo.png";
@@ -9,6 +10,12 @@ const sponsors = [
     href: "https://www.janestreet.com/",
     image: JaneStreetImage,
     className: "h-20 object-contain filter invert hover:scale-105 transition-transform duration-300",
+  },
+  {
+    name: "Citadel",
+    href: "https://www.citadel.com/",
+    image: CitadelImage,
+    className: "h-12 object-contain brightness-0 invert hover:scale-105 transition-transform duration-300",
   },
   {
     name: "Morgan Stanley",
