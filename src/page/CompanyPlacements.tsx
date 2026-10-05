@@ -1,6 +1,7 @@
 import amazonLogo from "../assets/images/placements/amazon.png";
 import ai2Logo from "../assets/images/placements/ai2.svg";
 import axiomLogo from "../assets/images/placements/axiom.png";
+import bridgewaterLogo from "../assets/images/placements/bridgewater.png";
 import citadelLogo from "../assets/images/placements/citadel.png";
 import databricksLogo from "../assets/images/placements/databricks.png";
 import goldmanSachsLogo from "../assets/images/placements/goldman-sachs.png";
@@ -15,10 +16,12 @@ import microsoftLogo from "../assets/images/placements/microsoft.png";
 import nousResearchLogo from "../assets/images/placements/nous-research.png";
 import nvidiaLogo from "../assets/images/placements/nvidia.png";
 import openaiLogo from "../assets/images/placements/openai.png";
+import optiverLogo from "../assets/images/placements/optiver.png";
 import perplexityLogo from "../assets/images/placements/perplexity.png";
 import robloxLogo from "../assets/images/placements/roblox.png";
 import stripeLogo from "../assets/images/placements/stripe.png";
 import sigLogo from "../assets/images/placements/susquehanna-international-group.png";
+import twoSigmaLogo from "../assets/images/placements/two-sigma.png";
 
 type PlacementCompany = {
   name: string;
@@ -42,6 +45,9 @@ const placementCategories: PlacementCategory[] = [
       },
       { name: "Jane Street", url: "https://www.janestreet.com/", logo: janeStreetLogo },
       { name: "Citadel", url: "https://www.citadel.com/", logo: citadelLogo },
+      { name: "Optiver", url: "https://optiver.com/", logo: optiverLogo },
+      { name: "Bridgewater", url: "https://www.bridgewater.com/", logo: bridgewaterLogo },
+      { name: "Two Sigma", url: "https://www.twosigma.com/", logo: twoSigmaLogo },
       { name: "Susquehanna International Group", url: "https://sig.com/", logo: sigLogo },
       { name: "Jump Trading", url: "https://www.jumptrading.com/", logo: jumpTradingLogo },
       { name: "IMC Trading", url: "https://www.imc.com/", logo: imcTradingLogo },

@@ -1,5 +1,8 @@
 import JaneStreetImage from "../assets/images/sponsors/janeStreetLogo.png";
 import CitadelImage from "../assets/images/sponsors/citadelLogo.svg";
+import OptiverImage from "../assets/images/sponsors/optiverLogo.png";
+import BridgewaterImage from "../assets/images/sponsors/bridgewaterLogo.png";
+import TwoSigmaImage from "../assets/images/sponsors/twoSigmaLogo.svg";
 import MorganStanleyImage from "../assets/images/sponsors/morganStanleyLogo.png";
 import QuantConnectImage from "../assets/images/sponsors/quantConnectLogo.png";
 import TheTradeDeskImage from "../assets/images/sponsors/theTradeDeskLogo.png";
@@ -15,6 +18,24 @@ const sponsors = [
     name: "Citadel",
     href: "https://www.citadel.com/",
     image: CitadelImage,
+    className: "h-12 object-contain brightness-0 invert hover:scale-105 transition-transform duration-300",
+  },
+  {
+    name: "Optiver",
+    href: "https://optiver.com/",
+    image: OptiverImage,
+    className: "h-12 object-contain brightness-0 invert hover:scale-105 transition-transform duration-300",
+  },
+  {
+    name: "Bridgewater",
+    href: "https://www.bridgewater.com/",
+    image: BridgewaterImage,
+    className: "h-12 object-contain brightness-0 invert hover:scale-105 transition-transform duration-300",
+  },
+  {
+    name: "Two Sigma",
+    href: "https://www.twosigma.com/",
+    image: TwoSigmaImage,
     className: "h-12 object-contain brightness-0 invert hover:scale-105 transition-transform duration-300",
   },
   {
