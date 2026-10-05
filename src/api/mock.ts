@@ -148,42 +148,30 @@ const getExecutiveSummary = async () => {
         imageUrl: jpl,
       },
       1: {
-        name: "Ishan Sinha",
-        title: "Managing Director",
-        imageUrl: iss,
-      },
-      2: {
         name: "Gaurang Pendharkar",
         title: "Managing Director",
         imageUrl: ga,
       },
-      3: {
+      2: {
         name: "Bhaumik Mehta",
         title: "VP of Curriculum",
         imageUrl: bm,
       },
-      4: {
+      3: {
         name: "Daniel Domingos",
         title: "VP of Competitions",
         imageUrl: dd,
       },
-      5: {
+      4: {
         name: "Patricia Dao",
         title: "VP of Sponsorships",
         imageUrl: pd3,
       },
-      6: { name: "Jasper Blume", title: "Managing Director", imageUrl: jb },
-      7: {
-        name: "Joshua Hughes-Kuruganti",
-        title: "Managing Director",
-        imageUrl: jh,
-      },
-      8: {
+      5: {
         name: "Saisha Lakkoju",
         title: "VP of Husky Hold'Em",
         imageUrl: sl,
       },
-      
     },
   };
 };
@@ -205,6 +193,21 @@ const getMembers = async () => {
         name: "Hoang Nguyen",
         title: "Vice President 2024-2025",
         imageUrl: hn,
+      },
+      3: {
+        name: "Ishan Sinha",
+        title: "Managing Director 2025-2026",
+        imageUrl: iss,
+      },
+      4: {
+        name: "Jasper Blume",
+        title: "Managing Director 2025-2026",
+        imageUrl: jb,
+      },
+      5: {
+        name: "Joshua Hughes-Kuruganti",
+        title: "Managing Director 2025-2026",
+        imageUrl: jh,
       },
     },
   }
